@@ -1,0 +1,66 @@
+<svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- 背景黑灰渐变 -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3D3D3D"/>
+      <stop offset="100%" stop-color="#1A1A1A"/>
+    </linearGradient>
+    
+    <!-- 气泡渐变 -->
+    <linearGradient id="bubbleGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#4A4A4A"/>
+      <stop offset="100%" stop-color="#2E2E2E"/>
+    </linearGradient>
+    
+    <!-- 开关轨道渐变（激活态） -->
+    <linearGradient id="trackGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#EA580C"/>
+      <stop offset="100%" stop-color="#F97316"/>
+    </linearGradient>
+    
+    <!-- 开关圆点高光 -->
+    <linearGradient id="knobGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#E5E5E5"/>
+    </linearGradient>
+    
+    <!-- 气泡阴影 -->
+    <filter id="bubbleShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000000" flood-opacity="0.3"/>
+    </filter>
+    
+    <!-- 开关阴影 -->
+    <filter id="switchShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  
+  <!-- 背景 -->
+  <rect width="512" height="512" rx="108" fill="url(#bgGrad)"/>
+  
+  <!-- 中景：Claude 气泡 -->
+  <g filter="url(#bubbleShadow)">
+    <!-- 气泡主体 -->
+    <rect x="96" y="120" width="320" height="220" rx="40" fill="url(#bubbleGrad)"/>
+    <!-- 气泡尾巴 -->
+    <path d="M140 340 L140 380 L180 340 Z" fill="#2E2E2E"/>
+  </g>
+  
+  <!-- 前景：两档开关 -->
+  <g filter="url(#switchShadow)">
+    <!-- 开关轨道 -->
+    <rect x="156" y="200" width="200" height="80" rx="40" fill="url(#trackGrad)"/>
+    
+    <!-- OFF 标识 -->
+    <circle cx="206" cy="240" r="8" fill="#FFFFFF" fill-opacity="0.3"/>
+    
+    <!-- ON 标识 -->
+    <rect x="286" y="232" width="16" height="16" rx="2" fill="#FFFFFF" fill-opacity="0.5"/>
+    
+    <!-- 开关圆点（ON 位置） -->
+    <circle cx="306" cy="240" r="30" fill="url(#knobGrad)"/>
+    
+    <!-- 圆点内部光泽 -->
+    <circle cx="306" cy="234" r="20" fill="#FFFFFF" fill-opacity="0.3"/>
+  </g>
+</svg>

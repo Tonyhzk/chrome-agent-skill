@@ -1,0 +1,7 @@
+Browser Chrome Agent
+Copyright 2025 Tonyhzk
+
+This project is a Python rewrite of Browser MCP (https://github.com/BrowserMCP/mcp),
+originally developed in TypeScript/Node.js by the BrowserMCP team.
+
+The original project is licensed under the Apache License, Version 2.0.
