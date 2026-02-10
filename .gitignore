@@ -1,6 +1,8 @@
 #==================== Custom ====================
 .claude
 .temp/
+0_Backup/
+0_Release/
 
 # ==================== Reference ====================
 0_Reference/

@@ -17,32 +17,38 @@ import glob
 # ==================== 常量配置 ====================
 
 # 压缩包后缀名称
-PROJECT_NAME = "project"
+PROJECT_NAME = "claude-code-venv"
 
 # 备份目录（相对于脚本所在目录）
-BACKUP_DIR = Path("0_Backup")
+BACKUP_DIR = Path("1_Backup")
 
 # 要打包的文件夹（支持相对路径）
 FOLDERS_TO_BACKUP = [
-    "",
+    "0_Doc",
+    "2_Scripts",
+    "claude-code-venv"
 ]
 
 # 要打包的文件（支持相对路径和通配符，如 *.bat）
 FILES_TO_BACKUP = [
-    "CLAUDE.md"
+    "*.*",
+    "CLAUDE.md",
     # "README.md",
 ]
 
 # 要跳过的文件夹（支持相对路径和通配符）
 FOLDERS_TO_SKIP = [
+    "claude-code-venv/.claude",
+    "claude-code-venv/venv_mac",
+    "claude-code-venv/venv_win",
     "__pycache__",
     ".pycache",
-    "node_modules",
     ".git"
 ]
 
 # 要跳过的文件（支持相对路径和通配符）
 FILES_TO_SKIP = [
+    ".env",
     "*.pyc",
     "*.pyo",
     ".DS_Store",
@@ -222,9 +228,20 @@ def create_backup():
     # 第四步：执行打包
     print("\n[步骤 4/4] 开始打包...")
 
-    # 生成备份文件名 (格式: YYYYMMDDHHMM_项目名.zip)
+    # 读取版本号（默认为空，为空则不添加版本号后缀）
+    version = ""
+    version_file = Path(PROJECT_NAME) / "VERSION"
+    if version_file.exists():
+        version = version_file.read_text(encoding='utf-8').strip()
+    
+    # 生成备份文件名
     timestamp = datetime.now().strftime("%Y%m%d%H%M")
-    backup_name = f"{timestamp}_{PROJECT_NAME}.zip"
+    if version:
+        # 格式: YYYYMMDDHHMM_项目名_v版本号.zip
+        backup_name = f"{timestamp}_{PROJECT_NAME}_v{version}.zip"
+    else:
+        # 格式: YYYYMMDDHHMM_项目名.zip
+        backup_name = f"{timestamp}_{PROJECT_NAME}.zip"
     backup_path = BACKUP_DIR / backup_name
 
     # 创建 zip 文件
