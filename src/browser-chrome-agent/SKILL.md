@@ -132,3 +132,10 @@ python3 %当前SKILL文件父目录%/scripts/batch_resolve_urls.py --urls urls.t
 发送 quit 命令：`{"action": "quit"}`
 
 或直接 `Ctrl+C` 终止进程。
+
+## 项目信息
+
+- 作者：[Tonyhzk](https://github.com/Tonyhzk)
+- 官方仓库：[chrome-agent-skill](https://github.com/Tonyhzk/chrome-agent-skill)
+- 原始仓库：[BrowserMCP/mcp](https://github.com/BrowserMCP/mcp)
+- 原始网站：[browsermcp.io](https://browsermcp.io/)
