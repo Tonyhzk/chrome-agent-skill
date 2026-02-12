@@ -1,0 +1,73 @@
+{
+  "reviewTitle": {
+    "message": "Terima kasih telah menggunakan $APP_NAME$",
+    "description": "Berterima kasih kepada pengguna karena telah menggunakan aplikasi",
+    "placeholders": {
+      "app_name": {
+        "content": "$1",
+        "example": "AutoBrowser"
+      }
+    }
+  },
+  "reviewDescription": {
+    "message": "Hai, saya $NAME$. Saya membuat $APP_NAME$ untuk membantu orang menghemat waktu dan mengotomatisasi tugas mereka. Jika Anda menikmati menggunakannya, saya menghargai penilaian 5 bintang untuk membantu orang lain menemukan $APP_NAME$. Terima kasih banyak!",
+    "description": "Meminta pengguna untuk meninggalkan ulasan untuk aplikasi",
+    "placeholders": {
+      "name": {
+        "content": "Namu"
+      },
+      "app_name": {
+        "content": "$1",
+        "example": "AutoBrowser"
+      }
+    }
+  },
+  "addReview": {
+    "message": "Tambah Ulasan",
+    "description": "Label untuk tombol menambah ulasan untuk aplikasi"
+  },
+  "dismiss": {
+    "message": "Tutup",
+    "description": "Aksi untuk menutup peringatan"
+  },
+  "signIn": {
+    "message": "Masuk",
+    "description": "Label untuk tombol masuk"
+  },
+  "connect": {
+    "message": "Hubungkan",
+    "description": "Label untuk tombol menghubungkan"
+  },
+  "disconnect": {
+    "message": "Putuskan",
+    "description": "Label untuk tombol memutuskan sambungan"
+  },
+  "focusConnectedTab": {
+    "message": "Fokus tab yang terhubung",
+    "description": "Label untuk tombol untuk memfokuskan tab yang terhubung"
+  },
+  "connectFromThisTab": {
+    "message": "Hubungkan dari tab ini",
+    "description": "Label untuk tombol untuk menghubungkan dari tab saat ini"
+  },
+  "invalidTab": {
+    "message": "Halaman ini tidak dapat diotomatisasi. Silakan coba halaman lain.",
+    "description": "Pesan kesalahan untuk tab yang tidak valid"
+  },
+  "error": {
+    "message": "Kesalahan",
+    "description": "Label untuk menampilkan kesalahan"
+  },
+  "appUpdated": {
+    "message": "Aplikasi diperbarui",
+    "description": "Label untuk peringatan aplikasi diperbarui"
+  },
+  "seeWhatIsNew": {
+    "message": "Lihat apa yang baru",
+    "description": "Label untuk deskripsi melihat apa yang baru"
+  },
+  "view": {
+    "message": "Lihat",
+    "description": "Label untuk tombol agar melihat pembaruan"
+  }
+}

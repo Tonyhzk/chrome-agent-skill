@@ -1,0 +1,73 @@
+{
+  "reviewTitle": {
+    "message": "$APP_NAME$ አመልካች ስለሆኑ እናመሰግናለን",
+    "description": "አመልካች ስለሆኑ ደንበኞቹን አመስግኑ",
+    "placeholders": {
+      "app_name": {
+        "content": "$1",
+        "example": "AutoBrowser"
+      }
+    }
+  },
+  "reviewDescription": {
+    "message": "ሰላም, እኔ $NAME$ ነኝ። $APP_NAME$ ሰዎችን ጊዜ ለማሳካት እና ነገሮቻቸውን ለማስተካል የሚረዳ ለመፍጠር ፈጸምሁት። የሆነ ወደ $APP_NAME$ መጠቀም ከተደሰትህ አንተን ለሌሎች ለማውጡ 5-ኮንታ ክብደት መስጠት እንጠራለን። እገኝህ።",
+    "description": "ለአፕሊኬሽኑ ማረጋገጥ ፈልገው ያሉት ይጠይቁ",
+    "placeholders": {
+      "name": {
+        "content": "Namu"
+      },
+      "app_name": {
+        "content": "$1",
+        "example": "AutoBrowser"
+      }
+    }
+  },
+  "addReview": {
+    "message": "ተመልስ ያክሉ",
+    "description": "ለመተግበሪያው ግምገማ ለመጨመር የተሰጠ ፍቃድ"
+  },
+  "dismiss": {
+    "message": "አሰናብት",
+    "description": "ማስጠንቀቂያውን ለማሰናበት ድርጊት"
+  },
+  "signIn": {
+    "message": "ይግቡ",
+    "description": "ወደ መለያ የመግቢያ አዝራር"
+  },
+  "connect": {
+    "message": "አገናኝ",
+    "description": "ታይተር በተቋሚ ላይ ገንኝ"
+  },
+  "disconnect": {
+    "message": "​እንቆቅልሽ",
+    "description": "በተካፌ የሚለው ምልክት"
+  },
+  "focusConnectedTab": {
+    "message": "ጠቋሚ ገፅ ማሰብ",
+    "description": "ጠቋሚ ገፅ ማሰብ እንዲቻል ለዚች ተንበልላ የተጠረጠረ መልእክት"
+  },
+  "connectFromThisTab": {
+    "message": "ከዚህ ትር ጋር ይገናኙ",
+    "description": "ከአሁኑ ትር ጋር የምትገናኙ ቁልፍ ላይ መለያ"
+  },
+  "invalidTab": {
+    "message": "ይህ ገፅ ሊተሠሩ አይችልም። እባኮትን ሌላ ገፅ ይምረጡ።",
+    "description": "ስህተት መልዕክት ለማልለ ትምህርተ ዋሻ"
+  },
+  "error": {
+    "message": "ስህተት",
+    "description": "ስህተት ለማሳየት ለድርጊት የሚሰጠው መለያ"
+  },
+  "appUpdated": {
+    "message": "መተግበሪያው አዘምኗል",
+    "description": "ለመተግበሪያ ዘምኗ ማስጠንቀቂያ መሳሪያ"
+  },
+  "seeWhatIsNew": {
+    "message": "አዳዲስ የተጨመሩትን እዩ",
+    "description": "አዳዲስ የተጨመሩትን ለማየት ምልክት"
+  },
+  "view": {
+    "message": "እይታ",
+    "description": "ዝማኔውን ለማየት የተዘጋጀ አዝራር"
+  }
+}

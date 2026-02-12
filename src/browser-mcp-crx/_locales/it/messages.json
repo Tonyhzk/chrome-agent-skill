@@ -1,0 +1,73 @@
+{
+  "reviewTitle": {
+    "message": "Grazie per aver utilizzato $APP_NAME$",
+    "description": "Ringrazia l'utente per aver utilizzato l'applicazione",
+    "placeholders": {
+      "app_name": {
+        "content": "$1",
+        "example": "AutoBrowser"
+      }
+    }
+  },
+  "reviewDescription": {
+    "message": "Ciao, mi chiamo $NAME$. Ho creato $APP_NAME$ per aiutare le persone a risparmiare tempo e automatizzare le loro attività. Se ti piace usarlo, ti sarei grato di una valutazione a 5 stelle per aiutare gli altri a scoprire $APP_NAME$. Grazie mille!",
+    "description": "Chiedi all'utente di lasciare una recensione per l'applicazione",
+    "placeholders": {
+      "name": {
+        "content": "Namu"
+      },
+      "app_name": {
+        "content": "$1",
+        "example": "AutoBrowser"
+      }
+    }
+  },
+  "addReview": {
+    "message": "Aggiungi una recensione",
+    "description": "Etichetta per il pulsante per aggiungere una recensione per l'applicazione"
+  },
+  "dismiss": {
+    "message": "Ignora",
+    "description": "Azione per ignorare l'avviso"
+  },
+  "signIn": {
+    "message": "Accedi",
+    "description": "Etichetta per il pulsante di accesso"
+  },
+  "connect": {
+    "message": "Conectar",
+    "description": "Etiqueta para el botón para conectar"
+  },
+  "disconnect": {
+    "message": "Disconnetti",
+    "description": "Etichetta per il pulsante per disconnettersi"
+  },
+  "focusConnectedTab": {
+    "message": "Focalizza la scheda connessa",
+    "description": "Etichetta per il pulsante per focalizzare la scheda connessa"
+  },
+  "connectFromThisTab": {
+    "message": "Connetti da questa scheda",
+    "description": "Etichetta per il pulsante per connettersi dalla scheda corrente"
+  },
+  "invalidTab": {
+    "message": "Questa pagina non può essere automatizzata. Per favore, prova un'altra pagina.",
+    "description": "Messaggio di errore per scheda non valida"
+  },
+  "error": {
+    "message": "Errore",
+    "description": "Etichetta per visualizzare un errore"
+  },
+  "appUpdated": {
+    "message": "App aggiornata",
+    "description": "Etichetta per l'avviso di aggiornamento dell'app"
+  },
+  "seeWhatIsNew": {
+    "message": "Scopri le novità",
+    "description": "Etichetta per la descrizione per vedere le novità"
+  },
+  "view": {
+    "message": "Visualizza",
+    "description": "Etichetta per il pulsante per visualizzare l'aggiornamento"
+  }
+}

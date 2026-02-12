@@ -1,0 +1,73 @@
+{
+  "reviewTitle": {
+    "message": "Tak for at bruge $APP_NAME$",
+    "description": "Tak brugeren for at bruge applikationen",
+    "placeholders": {
+      "app_name": {
+        "content": "$1",
+        "example": "AutoBrowser"
+      }
+    }
+  },
+  "reviewDescription": {
+    "message": "Hej, jeg er $NAME$. Jeg skabte $APP_NAME$ for at hjælpe folk med at spare tid og automatisere deres opgaver. Hvis du synes om at bruge det, ville jeg sætte pris på en 5-stjernet vurdering for at hjælpe andre med at opdage $APP_NAME$. Tusind tak!",
+    "description": "Bed brugeren om at give en anmeldelse af applikationen",
+    "placeholders": {
+      "name": {
+        "content": "Namu"
+      },
+      "app_name": {
+        "content": "$1",
+        "example": "AutoBrowser"
+      }
+    }
+  },
+  "addReview": {
+    "message": "Tilføj en anmeldelse",
+    "description": "Label for knappen til at tilføje en anmeldelse af applikationen"
+  },
+  "dismiss": {
+    "message": "Luk",
+    "description": "Handling til at lukke advarslen"
+  },
+  "signIn": {
+    "message": "Log ind",
+    "description": "Etiket for knappen til at logge ind"
+  },
+  "connect": {
+    "message": "Forbind",
+    "description": "Mærkat for knap til at forbinde"
+  },
+  "disconnect": {
+    "message": "Afbryd",
+    "description": "Etiket for knap til afbrydelse"
+  },
+  "focusConnectedTab": {
+    "message": "Fokus på tilsluttet faneblad",
+    "description": "Label for knap til at fokusere på det tilsluttede faneblad"
+  },
+  "connectFromThisTab": {
+    "message": "Forbind fra denne fane",
+    "description": "Mærkat til knap for at forbinde fra den aktuelle fane"
+  },
+  "invalidTab": {
+    "message": "Denne side kan ikke automatiseres. Prøv venligst en anden side.",
+    "description": "Fejlmeddelelse for ugyldig fane"
+  },
+  "error": {
+    "message": "Fejl",
+    "description": "Etiket til visning af en fejl"
+  },
+  "appUpdated": {
+    "message": "App opdateret",
+    "description": "Mærkat for app opdateret advarsel"
+  },
+  "seeWhatIsNew": {
+    "message": "Se hvad der er nyt",
+    "description": "Etiket for beskrivelsen for at se hvad der er nyt"
+  },
+  "view": {
+    "message": "Vis",
+    "description": "Etiket for knappen til at se opdateringen"
+  }
+}

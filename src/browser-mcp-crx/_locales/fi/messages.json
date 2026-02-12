@@ -1,0 +1,73 @@
+{
+  "reviewTitle": {
+    "message": "Kiitos kun käytät $APP_NAME$",
+    "description": "Kiitä käyttäjää sovelluksen käytöstä",
+    "placeholders": {
+      "app_name": {
+        "content": "$1",
+        "example": "AutoBrowser"
+      }
+    }
+  },
+  "reviewDescription": {
+    "message": "Hei, olen $NAME$. Loisin $APP_NAME$:n auttaakseni ihmisiä säästämään aikaa ja automatisoimaan tehtäviään. Jos nautit sen käytöstä, arvostaisin 5 tähden arvostelua, jotta muutkin voivat löytää $APP_NAME$:n. Kiitos paljon!",
+    "description": "Pyydä käyttäjää jättämään arvostelu sovelluksesta",
+    "placeholders": {
+      "name": {
+        "content": "Namu"
+      },
+      "app_name": {
+        "content": "$1",
+        "example": "AutoBrowser"
+      }
+    }
+  },
+  "addReview": {
+    "message": "Lisää arvostelu",
+    "description": "Sovelluksen arvostelun lisäämispainikkeen nimi"
+  },
+  "dismiss": {
+    "message": "Häivytä",
+    "description": "Toiminto hälytyksen hylkäämiseksi"
+  },
+  "signIn": {
+    "message": "Kirjaudu sisään",
+    "description": "Kirjaudu-painikkeen tunniste"
+  },
+  "connect": {
+    "message": "Yhdistä",
+    "description": "Nappi yhdistämistä varten"
+  },
+  "disconnect": {
+    "message": "Katkaise yhteys",
+    "description": "Painikkeen etiketiksi katkaise yhteys"
+  },
+  "focusConnectedTab": {
+    "message": "Keskity yhdistettyyn välilehteen",
+    "description": "Painikkeen etiketti keskittyä yhdistettyyn välilehteen"
+  },
+  "connectFromThisTab": {
+    "message": "Yhdistä tästä välilehdestä",
+    "description": "Painikkeen etiketti yhdistämiseen nykyisestä välilehdestä"
+  },
+  "invalidTab": {
+    "message": "Tätä sivua ei voi automatisoida. Yritä toista sivua.",
+    "description": "Virheilmoitus epäkelvolle välilehdelle"
+  },
+  "error": {
+    "message": "Virhe",
+    "description": "Selite virheen näyttämiseen"
+  },
+  "appUpdated": {
+    "message": "Sovellus päivitetty",
+    "description": "Sovelluksen päivitysilmoituksen etiketti"
+  },
+  "seeWhatIsNew": {
+    "message": "Katso, mitä uutta on",
+    "description": "Kuvaus, jossa kerrotaan uuden sisällön näkemisestä"
+  },
+  "view": {
+    "message": "Näytä",
+    "description": "Näytä päivityksen katselupainikkeen etiketti"
+  }
+}

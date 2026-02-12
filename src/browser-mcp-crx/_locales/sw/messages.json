@@ -1,0 +1,73 @@
+{
+  "reviewTitle": {
+    "message": "Asante kwa kutumia $APP_NAME$",
+    "description": "Mshukuru mtumiaji kwa kutumia programu",
+    "placeholders": {
+      "app_name": {
+        "content": "$1",
+        "example": "AutoBrowser"
+      }
+    }
+  },
+  "reviewDescription": {
+    "message": "Habari, mimi ni $NAME$. Niliunda $APP_NAME$ kusaidia watu kuokoa muda na kugeuza kazi zao kuwa za moja kwa moja. Ikiwa unafurahia kuitumia, ningefurahi kupata tathmini ya nyota 5 ili kusaidia wengine kugundua $APP_NAME$. Asante sana!",
+    "description": "Muombe mtumiaji kuacha tathmini kwa ajili ya programu",
+    "placeholders": {
+      "name": {
+        "content": "Jina"
+      },
+      "app_name": {
+        "content": "$1",
+        "example": "AutoBrowser"
+      }
+    }
+  },
+  "addReview": {
+    "message": "Ongeza Mapitio",
+    "description": "Lebo kwa kitufe cha kuongeza mapitio kwa matumizi"
+  },
+  "dismiss": {
+    "message": "Ondoa",
+    "description": "Hatua ya kuondoa tahadhari"
+  },
+  "signIn": {
+    "message": "Ingia",
+    "description": "Lebo ya kitufe cha kuingia"
+  },
+  "connect": {
+    "message": "Unganisha",
+    "description": "Lebo ya kitufe cha kuunganisha"
+  },
+  "disconnect": {
+    "message": "Katisha",
+    "description": "Lebo ya kitufe cha kukatisha"
+  },
+  "focusConnectedTab": {
+    "message": "Lenga kichupo kilichounganishwa",
+    "description": "Lebo ya kitufe cha kulenga kichupo kilichounganishwa"
+  },
+  "connectFromThisTab": {
+    "message": "Unganisha kutoka kwenye kichupo hiki",
+    "description": "Lebo kwa kitufe cha kuunganisha kutoka kwenye kichupo cha sasa"
+  },
+  "invalidTab": {
+    "message": "Ukurasa huu hauwezi kuendeshwa kiotomatiki. Tafadhali jaribu ukurasa tofauti.",
+    "description": "Ujumbe wa kosa kwa kichupo kisicho sahihi"
+  },
+  "error": {
+    "message": "Hitilafu",
+    "description": "Lebo ya kuonyesha hitilafu"
+  },
+  "appUpdated": {
+    "message": "App imesasishwa",
+    "description": "Lebo ya tahadhari ya programu imesasishwa"
+  },
+  "seeWhatIsNew": {
+    "message": "Tazama kile kipya",
+    "description": "Lebo kwa maelezo ya kuona kile kipya"
+  },
+  "view": {
+    "message": "Onyesha",
+    "description": "Lebo ya kitufe cha kuona sasisho"
+  }
+}

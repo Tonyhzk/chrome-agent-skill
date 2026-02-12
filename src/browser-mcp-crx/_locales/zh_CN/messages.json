@@ -1,0 +1,73 @@
+{
+  "reviewTitle": {
+    "message": "感谢使用$APP_NAME$",
+    "description": "感谢用户使用应用程序",
+    "placeholders": {
+      "app_name": {
+        "content": "$1",
+        "example": "AutoBrowser"
+      }
+    }
+  },
+  "reviewDescription": {
+    "message": "你好，我是$NAME$。我创建了$APP_NAME$来帮助人们节省时间并自动化他们的任务。如果你喜欢使用它，我会很感激你留下5星好评，以帮助其他人发现$APP_NAME$。非常感谢！",
+    "description": "请用户为应用程序留下评价",
+    "placeholders": {
+      "name": {
+        "content": "Namu"
+      },
+      "app_name": {
+        "content": "$1",
+        "example": "AutoBrowser"
+      }
+    }
+  },
+  "addReview": {
+    "message": "添加评论",
+    "description": "应用程序添加评论按钮的标签"
+  },
+  "dismiss": {
+    "message": "关闭",
+    "description": "关闭警报的操作"
+  },
+  "signIn": {
+    "message": "登录",
+    "description": "登录按钮的标签"
+  },
+  "connect": {
+    "message": "连接",
+    "description": "用于连接按钮的标签"
+  },
+  "disconnect": {
+    "message": "断开连接",
+    "description": "用于断开连接按钮的标签"
+  },
+  "focusConnectedTab": {
+    "message": "聚焦已连接的选项卡",
+    "description": "用于聚焦已连接选项卡的按钮标签"
+  },
+  "connectFromThisTab": {
+    "message": "从此标签页连接",
+    "description": "按钮标签，用于从当前标签页连接"
+  },
+  "invalidTab": {
+    "message": "此页面无法自动化。请尝试其他页面。",
+    "description": "无效标签页的错误信息"
+  },
+  "error": {
+    "message": "错误",
+    "description": "用于显示错误的标签"
+  },
+  "appUpdated": {
+    "message": "应用已更新",
+    "description": "应用更新提醒的标签"
+  },
+  "seeWhatIsNew": {
+    "message": "查看新内容",
+    "description": "查看新内容的说明标签"
+  },
+  "view": {
+    "message": "查看",
+    "description": "查看更新按钮的标签"
+  }
+}

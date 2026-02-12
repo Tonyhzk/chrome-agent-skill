@@ -1,0 +1,73 @@
+{
+  "reviewTitle": {
+    "message": "Dėkojame, kad naudojate $APP_NAME$",
+    "description": "Padėkoti vartotojui už programėlės naudojimą",
+    "placeholders": {
+      "app_name": {
+        "content": "$1",
+        "example": "AutoBrowser"
+      }
+    }
+  },
+  "reviewDescription": {
+    "message": "Sveiki, aš esu $NAME$. Sukūriau $APP_NAME$, kad padėčiau žmonėms taupyti laiką ir automatizuoti jų užduotis. Jei jums patinka ja naudotis, būčiau dėkingas už 5 žvaigždučių įvertinimą, kad kiti galėtų atrasti $APP_NAME$. Labai ačiū!",
+    "description": "Prašyti vartotojo palikti atsiliepimą apie programą",
+    "placeholders": {
+      "name": {
+        "content": "Namu"
+      },
+      "app_name": {
+        "content": "$1",
+        "example": "AutoBrowser"
+      }
+    }
+  },
+  "addReview": {
+    "message": "Pridėti apžvalgą",
+    "description": "Mygtuko etiketė, skirta pridėti programos apžvalgą"
+  },
+  "dismiss": {
+    "message": "Atmesti",
+    "description": "Veiksmas atmesti įspėjimą"
+  },
+  "signIn": {
+    "message": "Prisijungti",
+    "description": "Mygtuko prisijungti žyma"
+  },
+  "connect": {
+    "message": "Prisijungti",
+    "description": "Etiketė mygtukui prisijungti"
+  },
+  "disconnect": {
+    "message": "Atsijungti",
+    "description": "Mygtuko, skirto atsijungti, etiketė"
+  },
+  "focusConnectedTab": {
+    "message": "Sutelktas prijungtas skirtukas",
+    "description": "Mygtuko, skirto sutelkti prijungtą skirtuką, etiketė"
+  },
+  "connectFromThisTab": {
+    "message": "Prisijungti iš šio skirtuko",
+    "description": "Mygtuko etiketė, skirta prisijungti iš dabartinio skirtuko"
+  },
+  "invalidTab": {
+    "message": "Šis puslapis negali būti automatizuotas. Prašome išbandyti kitą puslapį.",
+    "description": "Klaidos pranešimas netinkamam skirtukui"
+  },
+  "error": {
+    "message": "Klaida",
+    "description": "Žyma klaidos rodymui"
+  },
+  "appUpdated": {
+    "message": "Programa atnaujinta",
+    "description": "Žyma apie programos atnaujinimo įspėjimą"
+  },
+  "seeWhatIsNew": {
+    "message": "Žiūrėkite, kas naujo",
+    "description": "Etiketė aprašymui, norint pamatyti, kas naujo"
+  },
+  "view": {
+    "message": "Peržiūrėti",
+    "description": "Mygtuko, skirto peržiūrėti naujinį, etiketė"
+  }
+}

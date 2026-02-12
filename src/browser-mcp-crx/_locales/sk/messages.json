@@ -1,0 +1,73 @@
+{
+  "reviewTitle": {
+    "message": "Ďakujeme za používanie $APP_NAME$",
+    "description": "Poďakovanie používateľovi za používanie aplikácie",
+    "placeholders": {
+      "app_name": {
+        "content": "$1",
+        "example": "AutoBrowser"
+      }
+    }
+  },
+  "reviewDescription": {
+    "message": "Ahoj, ja som $NAME$. Vytvoril som $APP_NAME$, aby som ľuďom pomohol ušetriť čas a zautomatizovať ich úlohy. Ak sa vám to páči, ocenil by som 5-hviezdičkové hodnotenie, aby mohli $APP_NAME$ objaviť aj iní. Ďakujem veľmi pekne!",
+    "description": "Požiadajte používateľa, aby nechal recenziu pre aplikáciu",
+    "placeholders": {
+      "name": {
+        "content": "Namu"
+      },
+      "app_name": {
+        "content": "$1",
+        "example": "AutoBrowser"
+      }
+    }
+  },
+  "addReview": {
+    "message": "Pridať recenziu",
+    "description": "Označenie tlačidla na pridanie recenzie pre aplikáciu"
+  },
+  "dismiss": {
+    "message": "Zrušiť",
+    "description": "Akcia na zrušenie upozornenia"
+  },
+  "signIn": {
+    "message": "Prihlásiť sa",
+    "description": "Označenie pre tlačidlo na prihlásenie"
+  },
+  "connect": {
+    "message": "Pripojiť",
+    "description": "Označenie pre tlačidlo na pripojenie"
+  },
+  "disconnect": {
+    "message": "Odpojiť",
+    "description": "Označenie tlačidla na odpojenie"
+  },
+  "focusConnectedTab": {
+    "message": "Zamerať sa na pripojenú kartu",
+    "description": "Označenie pre tlačidlo na zameranie sa na pripojenú kartu"
+  },
+  "connectFromThisTab": {
+    "message": "Pripojiť z tejto karty",
+    "description": "Označenie pre tlačidlo na pripojenie z aktuálnej karty"
+  },
+  "invalidTab": {
+    "message": "Túto stránku nie je možné automatizovať. Skúste inú stránku.",
+    "description": "Chybová správa pre neplatnú kartu"
+  },
+  "error": {
+    "message": "Chyba",
+    "description": "Označenie pre zobrazenie chyby"
+  },
+  "appUpdated": {
+    "message": "Aplikácia bola aktualizovaná",
+    "description": "Označenie pre upozornenie o aktualizácii aplikácie"
+  },
+  "seeWhatIsNew": {
+    "message": "Zistite, čo je nové",
+    "description": "Označenie pre popis, aby ste zistili, čo je nové"
+  },
+  "view": {
+    "message": "Zobraziť",
+    "description": "Označenie pre tlačidlo na zobrazenie aktualizácie"
+  }
+}

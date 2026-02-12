@@ -1,0 +1,73 @@
+{
+  "reviewTitle": {
+    "message": "از استفاده شما از $APP_NAME$ متشکریم",
+    "description": "از کاربر برای استفاده از برنامه تشکر کنید",
+    "placeholders": {
+      "app_name": {
+        "content": "$1",
+        "example": "AutoBrowser"
+      }
+    }
+  },
+  "reviewDescription": {
+    "message": "سلام، من $NAME$ هستم. من $APP_NAME$ را برای کمک به افراد در صرفه‌جویی در زمان و خودکارسازی وظایفشان ایجاد کردم. اگر از استفاده از آن لذت می‌برید، من از یک امتیاز ۵ ستاره برای معرفی $APP_NAME$ به دیگران قدردانی می‌کنم. خیلی متشکرم!",
+    "description": "از کاربر بخواهید برای برنامه یک نظر بگذارد",
+    "placeholders": {
+      "name": {
+        "content": "Namu"
+      },
+      "app_name": {
+        "content": "$1",
+        "example": "AutoBrowser"
+      }
+    }
+  },
+  "addReview": {
+    "message": "افزودن نقد و بررسی",
+    "description": "برچسب برای دکمه‌ای جهت افزودن نقد و بررسی برای برنامه"
+  },
+  "dismiss": {
+    "message": "رد کردن",
+    "description": "اقدامی برای رد کردن هشدار"
+  },
+  "signIn": {
+    "message": "ورود به سیستم",
+    "description": "برچسب برای دکمه ورود به سیستم"
+  },
+  "connect": {
+    "message": "اتصال",
+    "description": "برچسب برای دکمه اتصال"
+  },
+  "disconnect": {
+    "message": "قطع ارتباط",
+    "description": "برچسب برای دکمه قطع ارتباط"
+  },
+  "focusConnectedTab": {
+    "message": "تمرکز بر روی زبانه متصل",
+    "description": "برچسب دکمه برای تمرکز بر روی زبانه متصل"
+  },
+  "connectFromThisTab": {
+    "message": "اتصال از این زبانه",
+    "description": "برچسب برای دکمه اتصال از زبانه جاری"
+  },
+  "invalidTab": {
+    "message": "امکان اتوماسیون این صفحه وجود ندارد. لطفاً صفحه دیگری را امتحان کنید.",
+    "description": "پیام خطا برای برگه نامعتبر"
+  },
+  "error": {
+    "message": "خطا",
+    "description": "برچسب برای نمایش یک خطا"
+  },
+  "appUpdated": {
+    "message": "برنامه به‌روز شد",
+    "description": "برچسب برای اعلان به‌روزرسانی برنامه"
+  },
+  "seeWhatIsNew": {
+    "message": "ببینید چه خبر است",
+    "description": "برچسب برای توضیح درباره‌ی موارد جدید"
+  },
+  "view": {
+    "message": "مشاهده",
+    "description": "برچسب برای دکمه مشاهده بروزرسانی"
+  }
+}

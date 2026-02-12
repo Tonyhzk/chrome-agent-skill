@@ -54,15 +54,21 @@ def kill_process_on_port(port: int):
         print(f"释放端口 {port} 失败: {e}", file=sys.stderr)
 
 
-async def capture_aria_snapshot(context, status: str = "") -> dict:
-    """捕获页面 ARIA 快照，返回结构化结果"""
+async def capture_aria_snapshot(context, status: str = "", save_path: str = "") -> dict:
+    """捕获页面 ARIA 快照，返回结构化结果
+
+    Args:
+        context: 浏览器上下文
+        status: 操作状态描述（如 "已点击 ref=s1e5"）
+        save_path: 快照保存路径。指定后快照写入文件，stdout 只返回简短结果
+    """
     url = await context.send_message("getUrl")
     title = await context.send_message("getTitle")
     snapshot = await context.send_message("browser_snapshot", {})
 
     status_line = f"{status}\n" if status else ""
 
-    text = (
+    full_text = (
         f"{status_line}"
         f"- Page URL: {url}\n"
         f"- Page Title: {title}\n"
@@ -72,4 +78,11 @@ async def capture_aria_snapshot(context, status: str = "") -> dict:
         f"```"
     )
 
-    return {"type": "text", "text": text}
+    if save_path:
+        path = Path(save_path)
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(full_text, encoding="utf-8")
+        short_text = f"{status_line}- Page URL: {url}\n- Page Title: {title}\n- Snapshot saved to: {save_path}"
+        return {"type": "text", "text": short_text}
+
+    return {"type": "text", "text": full_text}

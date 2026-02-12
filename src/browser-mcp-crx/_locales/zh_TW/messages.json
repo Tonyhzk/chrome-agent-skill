@@ -1,0 +1,73 @@
+{
+  "reviewTitle": {
+    "message": "感謝使用$APP_NAME$",
+    "description": "感謝用戶使用本應用程式",
+    "placeholders": {
+      "app_name": {
+        "content": "$1",
+        "example": "AutoBrowser"
+      }
+    }
+  },
+  "reviewDescription": {
+    "message": "嗨，我是$NAME$。我創建了$APP_NAME$來幫助人們節省時間和自動化他們的任務。如果你喜歡使用它，請給予5星評分來幫助其他人發現$APP_NAME$。非常感謝！",
+    "description": "請用戶為應用留下評論",
+    "placeholders": {
+      "name": {
+        "content": "Namu"
+      },
+      "app_name": {
+        "content": "$1",
+        "example": "AutoBrowser"
+      }
+    }
+  },
+  "addReview": {
+    "message": "新增評論",
+    "description": "用於為應用程式新增評論的按鈕標籤"
+  },
+  "dismiss": {
+    "message": "關閉",
+    "description": "動作以關閉警報"
+  },
+  "signIn": {
+    "message": "登入",
+    "description": "用於登入按鈕的標籤"
+  },
+  "connect": {
+    "message": "連接",
+    "description": "連接的按鈕標籤"
+  },
+  "disconnect": {
+    "message": "斷開連接",
+    "description": "用於斷開連接按鈕的標籤"
+  },
+  "focusConnectedTab": {
+    "message": "專注於已連接的標籤",
+    "description": "專注於已連接標籤的按鈕標籤"
+  },
+  "connectFromThisTab": {
+    "message": "從此標籤頁連接",
+    "description": "按鈕標籤，用於從當前標籤頁連接"
+  },
+  "invalidTab": {
+    "message": "此頁面無法自動化。請嘗試不同的頁面。",
+    "description": "無效標籤頁的錯誤訊息"
+  },
+  "error": {
+    "message": "錯誤",
+    "description": "用於顯示錯誤的標籤"
+  },
+  "appUpdated": {
+    "message": "應用程式已更新",
+    "description": "應用程式更新警示的標籤"
+  },
+  "seeWhatIsNew": {
+    "message": "查看新內容",
+    "description": "描述查看新內容的標籤"
+  },
+  "view": {
+    "message": "查看",
+    "description": "查看更新按鈕的標籤"
+  }
+}

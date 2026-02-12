@@ -1,0 +1,73 @@
+{
+  "reviewTitle": {
+    "message": "Merci d'utiliser $APP_NAME$",
+    "description": "Remerciez l'utilisateur d'utiliser l'application",
+    "placeholders": {
+      "app_name": {
+        "content": "$1",
+        "example": "AutoBrowser"
+      }
+    }
+  },
+  "reviewDescription": {
+    "message": "Bonjour, je suis $NAME$. J'ai créé $APP_NAME$ pour aider les gens à gagner du temps et à automatiser leurs tâches. Si vous aimez l'utiliser, j'apprécierais une note de 5 étoiles pour aider les autres à découvrir $APP_NAME$. Merci beaucoup !",
+    "description": "Demander à l'utilisateur de laisser un avis pour l'application",
+    "placeholders": {
+      "name": {
+        "content": "Namu"
+      },
+      "app_name": {
+        "content": "$1",
+        "example": "AutoBrowser"
+      }
+    }
+  },
+  "addReview": {
+    "message": "Ajouter un avis",
+    "description": "Libellé pour le bouton pour ajouter un avis pour l'application"
+  },
+  "dismiss": {
+    "message": "Ignorer",
+    "description": "Action pour ignorer l'alerte"
+  },
+  "signIn": {
+    "message": "Se connecter",
+    "description": "Étiquette pour le bouton de connexion"
+  },
+  "connect": {
+    "message": "Connecter",
+    "description": "Étiquette pour le bouton de connexion"
+  },
+  "disconnect": {
+    "message": "Déconnecter",
+    "description": "Libellé du bouton pour se déconnecter"
+  },
+  "focusConnectedTab": {
+    "message": "Mettre l'onglet connecté au premier plan",
+    "description": "Libellé pour le bouton permettant de mettre l'onglet connecté au premier plan"
+  },
+  "connectFromThisTab": {
+    "message": "Se connecter depuis cet onglet",
+    "description": "Label du bouton pour se connecter depuis l'onglet actuel"
+  },
+  "invalidTab": {
+    "message": "Cette page ne peut pas être automatisée. Veuillez essayer une autre page.",
+    "description": "Message d'erreur pour l'onglet invalide"
+  },
+  "error": {
+    "message": "Erreur",
+    "description": "Étiquette pour afficher une erreur"
+  },
+  "appUpdated": {
+    "message": "Application mise à jour",
+    "description": "Étiquette pour l'alerte de mise à jour de l'application"
+  },
+  "seeWhatIsNew": {
+    "message": "Voir les nouveautés",
+    "description": "Libellé pour la description des nouveautés"
+  },
+  "view": {
+    "message": "Voir",
+    "description": "Libellé pour le bouton pour voir la mise à jour"
+  }
+}

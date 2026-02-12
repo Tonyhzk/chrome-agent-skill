@@ -1,0 +1,73 @@
+{
+  "reviewTitle": {
+    "message": "Terima kasih kerana menggunakan $APP_NAME$",
+    "description": "Terima kasih kepada pengguna kerana menggunakan aplikasi ini",
+    "placeholders": {
+      "app_name": {
+        "content": "$1",
+        "example": "AutoBrowser"
+      }
+    }
+  },
+  "reviewDescription": {
+    "message": "Hai, saya $NAME$. Saya mencipta $APP_NAME$ untuk membantu orang menjimatkan masa dan mengautomasi tugas mereka. Jika anda suka menggunakannya, saya menghargai penilaian 5 bintang untuk membantu orang lain menemui $APP_NAME$. Terima kasih banyak!",
+    "description": "Meminta pengguna untuk meninggalkan ulasan untuk aplikasi",
+    "placeholders": {
+      "name": {
+        "content": "Namu"
+      },
+      "app_name": {
+        "content": "$1",
+        "example": "AutoBrowser"
+      }
+    }
+  },
+  "addReview": {
+    "message": "Tambah Ulasan",
+    "description": "Label untuk butang untuk menambah ulasan bagi aplikasi"
+  },
+  "dismiss": {
+    "message": "Tutup",
+    "description": "Tindakan untuk menutup amaran"
+  },
+  "signIn": {
+    "message": "Log masuk",
+    "description": "Label untuk butang log masuk"
+  },
+  "connect": {
+    "message": "Sambung",
+    "description": "Label untuk butang untuk sambung"
+  },
+  "disconnect": {
+    "message": "Putuskan",
+    "description": "Label untuk butang memutuskan sambungan"
+  },
+  "focusConnectedTab": {
+    "message": "Fokuskan tab yang bersambung",
+    "description": "Label untuk butang untuk memfokuskan tab yang bersambung"
+  },
+  "connectFromThisTab": {
+    "message": "Sambung dari tab ini",
+    "description": "Label untuk butang untuk sambung dari tab semasa"
+  },
+  "invalidTab": {
+    "message": "Halaman ini tidak boleh diautomasikan. Sila cuba halaman yang berbeza.",
+    "description": "Mesej ralat untuk tab tidak sah"
+  },
+  "error": {
+    "message": "Ralat",
+    "description": "Label untuk memaparkan ralat"
+  },
+  "appUpdated": {
+    "message": "Apl telah dikemas kini",
+    "description": "Label untuk pemberitahuan aplikasi dikemas kini"
+  },
+  "seeWhatIsNew": {
+    "message": "Lihat apa yang baharu",
+    "description": "Label untuk penerangan melihat apa yang baharu"
+  },
+  "view": {
+    "message": "Papar",
+    "description": "Label untuk butang melihat kemas kini"
+  }
+}

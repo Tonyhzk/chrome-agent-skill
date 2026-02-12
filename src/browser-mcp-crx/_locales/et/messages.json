@@ -1,0 +1,73 @@
+{
+  "reviewTitle": {
+    "message": "Tänan, et kasutad $APP_NAME$",
+    "description": "Täname kasutajat rakenduse kasutamise eest",
+    "placeholders": {
+      "app_name": {
+        "content": "$1",
+        "example": "AutoBrowser"
+      }
+    }
+  },
+  "reviewDescription": {
+    "message": "Tere, mina olen $NAME$. Ma lõin $APP_NAME$, et aidata inimestel aega säästa ja oma ülesandeid automatiseerida. Kui teile meeldib seda kasutada, oleksin tänulik 5-tärni hinnangu eest, et aidata teistel $APP_NAME$ avastada. Suur tänu!",
+    "description": "Paluge kasutajal rakenduse kohta arvustust jätta",
+    "placeholders": {
+      "name": {
+        "content": "Namu"
+      },
+      "app_name": {
+        "content": "$1",
+        "example": "AutoBrowser"
+      }
+    }
+  },
+  "addReview": {
+    "message": "Lisa arvustus",
+    "description": "Rakenduse arvustuse lisamise nupu silt"
+  },
+  "dismiss": {
+    "message": "Loobu",
+    "description": "Hoiatuse tühistamise tegevus"
+  },
+  "signIn": {
+    "message": "Logi sisse",
+    "description": "Nupp sisselogimiseks"
+  },
+  "connect": {
+    "message": "Ühenda",
+    "description": "Nupp silt ühendamiseks"
+  },
+  "disconnect": {
+    "message": "Lahuta",
+    "description": "Nupp lahutamiseks"
+  },
+  "focusConnectedTab": {
+    "message": "Fokusseeri ühendatud vahekaardile",
+    "description": "Nupp sildiga ühendatud vahekaardile fokusseerimiseks"
+  },
+  "connectFromThisTab": {
+    "message": "Ühenda sellest vahekaardist",
+    "description": "Praeguse vahekaardi ühendamise nuppu silt"
+  },
+  "invalidTab": {
+    "message": "Seda lehte ei saa automatiseerida. Palun proovige teist lehte.",
+    "description": "Tõrketeade kehtetu vahekaardi jaoks"
+  },
+  "error": {
+    "message": "Viga",
+    "description": "Märgis vea kuvamiseks"
+  },
+  "appUpdated": {
+    "message": "Rakendus uuendatud",
+    "description": "Silt rakenduse uuendamise teate jaoks"
+  },
+  "seeWhatIsNew": {
+    "message": "Vaata, mis on uut",
+    "description": "Kirjeldus seda vaatamiseks, mis on uus"
+  },
+  "view": {
+    "message": "Vaade",
+    "description": "Nupp kiri uuenduse vaatamiseks"
+  }
+}

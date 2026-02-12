@@ -14,11 +14,13 @@
 
 ### 核心功能
 - **页面导航** - 跳转 URL、前进/后退
-- **元素交互** - 点击、悬停、输入文本、选择下拉选项、拖拽
+- **元素交互** - 点击（ref 或坐标）、悬停、输入文本、选择下拉选项、拖拽
+- **元素搜索** - 通过关键字搜索元素、获取元素坐标
+- **多标签页管理** - 列出、新建、切换、关闭标签页
 - **截图** - 捕获页面截图（保存文件或返回 base64）
 - **页面快照** - 获取 ARIA 无障碍树，用于结构化页面分析
+- **页面内容** - 获取纯文字内容、完整 HTML 源码
 - **键盘输入** - 按键、提交表单
-- **页面源码** - 获取完整 HTML 源码并保存到文件
 - **控制台日志** - 获取浏览器控制台输出
 
 ### 架构
@@ -55,7 +57,7 @@ git clone https://github.com/Tonyhzk/chrome-agent-skill.git
 
 1. 在 Chrome 地址栏输入 `chrome://extensions/`
 2. 开启**开发者模式**
-3. 将 `src/browser-chrome-agent/assets/` 中的 `.crx` 文件拖入页面安装；或解压 `Browser_MCP_1_3_4_modified.zip` 后点击「加载已解压的扩展程序」（修改版，支持获取页面源码）
+3. 解压 `src/browser-chrome-agent/assets/` 中的 `.zip` 扩展包，点击「加载已解压的扩展程序」选择解压目录；或直接加载 `src/browser-mcp-crx/` 源码目录
 4. 固定 Browser MCP 扩展图标以便快速访问
 
 ### 3. 安装 Python 依赖
@@ -108,17 +110,25 @@ python3 src/browser-chrome-agent/scripts/server.py --port 9009
 | `navigate` | `{"url": "..."}` | 导航到 URL |
 | `go_back` | `{}` | 后退 |
 | `go_forward` | `{}` | 前进 |
-| `click` | `{"ref": "s1e5"}` | 点击元素 |
+| `click` | `{"ref": "s1e5"}` 或 `{"x": 500, "y": 100}` | 点击元素（支持 ref 或坐标） |
 | `hover` | `{"ref": "s1e5"}` | 悬停元素 |
 | `type` | `{"ref": "s1e5", "text": "...", "submit": false}` | 输入文本 |
 | `select_option` | `{"ref": "s1e5", "values": ["..."]}` | 选择下拉选项 |
 | `drag` | `{"startRef": "s1e5", "endRef": "s1e8"}` | 拖拽 |
 | `press_key` | `{"key": "Enter"}` | 按键 |
+| `get_coordinates` | `{"ref": "s1e5"}` | 获取元素坐标位置 |
+| `find_element` | `{"keyword": "搜索"}` | 通过关键字搜索元素，返回匹配的 ref 列表 |
+| `find_and_locate` | `{"keyword": "搜索", "index": 0}` | 搜索元素并立即获取坐标 |
+| `get_text` | `{}` 或 `{"max_length": 5000}` | 获取页面纯文字内容 |
 | `wait` | `{"time": 2}` | 等待（秒） |
 | `screenshot` | `{}` 或 `{"savePath": "路径"}` | 截图 |
 | `snapshot` | `{}` | 获取页面 ARIA 快照 |
 | `get_html` | `{"savePath": "路径"}` | 获取页面完整 HTML 源码并保存到文件 |
 | `get_console_logs` | `{}` | 获取控制台日志 |
+| `list_tabs` | `{}` | 列出所有标签页 |
+| `new_tab` | `{"url": "..."}` | 打开新标签页（url 可选） |
+| `switch_tab` | `{"tabId": 123456}` | 切换到指定标签页 |
+| `close_tab` | `{"tabId": 123456}` | 关闭指定标签页 |
 | `status` | - | 查询连接状态 |
 | `quit` | - | 关闭服务器 |
 
@@ -142,6 +152,8 @@ chrome-agent-skill/
 │   │   ├── batch_resolve_urls.py  # 批量 URL 解析器
 │   │   └── requirements.txt  # Python 依赖
 │   └── assets/               # Chrome 扩展安装包
+├── src/browser-mcp-crx/      # Chrome 扩展修改版源码
+├── upstream/                 # 原始 Browser MCP 扩展及源码存档
 ├── 0_Doc/                    # 文档
 ├── 0_Design/                 # 设计资源
 ├── setup_claude_dir.py       # 共享配置符号链接工具

@@ -1,0 +1,73 @@
+{
+  "reviewTitle": {
+    "message": "شكرًا لاستخدامك $APP_NAME$",
+    "description": "شُكر المستخدم لاستخدام التطبيق",
+    "placeholders": {
+      "app_name": {
+        "content": "$1",
+        "example": "AutoBrowser"
+      }
+    }
+  },
+  "reviewDescription": {
+    "message": "مرحبًا، أنا $NAME$. لقد أنشأت $APP_NAME$ لمساعدة الناس على توفير الوقت وأتمتة مهامهم. إذا كنت تستمتع باستخدامه، سأكون ممتنًا لتقييم بخمس نجوم لمساعدة الآخرين في اكتشاف $APP_NAME$. شكرًا جزيلاً!",
+    "description": "اطلب من المستخدم ترك مراجعة للتطبيق",
+    "placeholders": {
+      "name": {
+        "content": "Namu"
+      },
+      "app_name": {
+        "content": "$1",
+        "example": "AutoBrowser"
+      }
+    }
+  },
+  "addReview": {
+    "message": "أضف مراجعة",
+    "description": "تسمية لزر إضافة مراجعة للتطبيق"
+  },
+  "dismiss": {
+    "message": "رفض",
+    "description": "إجراء لرفض التنبيه"
+  },
+  "signIn": {
+    "message": "تسجيل الدخول",
+    "description": "تسمية للزر لتسجيل الدخول"
+  },
+  "connect": {
+    "message": "اتصال",
+    "description": "تسمية لزر الاتصال"
+  },
+  "disconnect": {
+    "message": "قطع الاتصال",
+    "description": "تسمية لزر قطع الاتصال"
+  },
+  "focusConnectedTab": {
+    "message": "تركيز على علامة التبويب المتصلة",
+    "description": "التسمية للزر للتركيز على علامة التبويب المتصلة"
+  },
+  "connectFromThisTab": {
+    "message": "الاتصال من هذه علامة التبويب",
+    "description": "تسمية الزر للاتصال من علامة التبويب الحالية"
+  },
+  "invalidTab": {
+    "message": "لا يمكن تشغيل العمليات الآلية على هذه الصفحة. يرجى محاولة صفحة مختلفة.",
+    "description": "رسالة خطأ للعلامة التبويب غير الصالحة"
+  },
+  "error": {
+    "message": "خطأ",
+    "description": "تسمية لعرض خطأ"
+  },
+  "appUpdated": {
+    "message": "تم تحديث التطبيق",
+    "description": "التسمية التي تشير إلى تنبيه تحديث التطبيق"
+  },
+  "seeWhatIsNew": {
+    "message": "اطلع على الجديد",
+    "description": "تسمية للوصف للاطلاع على الجديد"
+  },
+  "view": {
+    "message": "عرض",
+    "description": "التسمية للزر لعرض التحديث"
+  }
+}

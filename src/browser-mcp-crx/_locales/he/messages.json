@@ -1,0 +1,73 @@
+{
+  "reviewTitle": {
+    "message": "תודה שהשתמשת ב-$APP_NAME$",
+    "description": "הודיית משתמש על השימוש באפליקציה",
+    "placeholders": {
+      "app_name": {
+        "content": "$1",
+        "example": "AutoBrowser"
+      }
+    }
+  },
+  "reviewDescription": {
+    "message": "שלום, אני $NAME$. יצרתי את $APP_NAME$ כדי לעזור לאנשים לחסוך זמן ולהפוך את המשימות שלהם לאוטומטיות. אם אתם נהנים להשתמש בזה, אעריך דירוג של 5 כוכבים כדי לעזור לאחרים לגלות את $APP_NAME$. תודה רבה!",
+    "description": "לבקש מהמשתמש להשאיר ביקורת על היישום",
+    "placeholders": {
+      "name": {
+        "content": "Namu"
+      },
+      "app_name": {
+        "content": "$1",
+        "example": "AutoBrowser"
+      }
+    }
+  },
+  "addReview": {
+    "message": "הוסף ביקורת",
+    "description": "תווית עבור הכפתור להוספת ביקורת על היישום"
+  },
+  "dismiss": {
+    "message": "התעלם",
+    "description": "פעולה להתעלמות מההתראה"
+  },
+  "signIn": {
+    "message": "התחבר",
+    "description": "תווית לכפתור ההתחברות"
+  },
+  "connect": {
+    "message": "התחבר",
+    "description": "תווית לכפתור להתחברות"
+  },
+  "disconnect": {
+    "message": "התנתק",
+    "description": "תווית עבור כפתור להתנתקות"
+  },
+  "focusConnectedTab": {
+    "message": "התמקדות בכרטיסייה מחוברת",
+    "description": "תווית עבור כפתור להתמקדות בכרטיסייה המחוברת"
+  },
+  "connectFromThisTab": {
+    "message": "התחבר מכרטיסייה זו",
+    "description": "תווית לכפתור להתחברות מהכרטיסייה הנוכחית"
+  },
+  "invalidTab": {
+    "message": "לא ניתן להפוך את הדף הזה לאוטומטי. אנא נסה דף אחר.",
+    "description": "הודעת שגיאה בכרטיסייה לא חוקית"
+  },
+  "error": {
+    "message": "שגיאה",
+    "description": "תווית להצגת שגיאה"
+  },
+  "appUpdated": {
+    "message": "העדכון התבצע בהצלחה",
+    "description": "תווית להתרעת עדכון האפליקציה"
+  },
+  "seeWhatIsNew": {
+    "message": "ראה מה חדש",
+    "description": "תווית לתיאור לראות מה חדש"
+  },
+  "view": {
+    "message": "צפה",
+    "description": "תווית עבור הכפתור להצגת העדכון"
+  }
+}

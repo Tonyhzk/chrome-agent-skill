@@ -1,0 +1,73 @@
+{
+  "reviewTitle": {
+    "message": "Hvala što koristite $APP_NAME$",
+    "description": "Zahvalnost korisniku za korišćenje aplikacije",
+    "placeholders": {
+      "app_name": {
+        "content": "$1",
+        "example": "AutoBrowser"
+      }
+    }
+  },
+  "reviewDescription": {
+    "message": "Zdravo, ja sam $NAME$. Napravio sam $APP_NAME$ kako bih pomogao ljudima da uštede vreme i automatizuju svoje zadatke. Ako vam se dopada korišćenje ove aplikacije, cenio bih pet zvezdica, kako bi i drugi otkrili $APP_NAME$. Puno hvala!",
+    "description": "Zamolite korisnika da ostavi recenziju za aplikaciju",
+    "placeholders": {
+      "name": {
+        "content": "Namu"
+      },
+      "app_name": {
+        "content": "$1",
+        "example": "AutoBrowser"
+      }
+    }
+  },
+  "addReview": {
+    "message": "Dodajte recenziju",
+    "description": "Oznaka za dugme za dodavanje recenzije aplikacije"
+  },
+  "dismiss": {
+    "message": "Оdustani",
+    "description": "Akcija za odustajanje od upozorenja"
+  },
+  "signIn": {
+    "message": "Prijavi se",
+    "description": "Oznaka za dugme za prijavu"
+  },
+  "connect": {
+    "message": "Poveži",
+    "description": "Oznaka za dugme za povezivanje"
+  },
+  "disconnect": {
+    "message": "Prekini vezu",
+    "description": "Oznaka za dugme za prekid veze"
+  },
+  "focusConnectedTab": {
+    "message": "Фокусирај повезану картицу",
+    "description": "Ознака за дугме за фокусирање повезане картице"
+  },
+  "connectFromThisTab": {
+    "message": "Poveži se sa ove kartice",
+    "description": "Oznaka za dugme za povezivanje sa trenutne kartice"
+  },
+  "invalidTab": {
+    "message": "Ova stranica ne može biti automatizovana. Molimo pokušajte sa drugom stranicom.",
+    "description": "Poruka greške za nevažeću karticu"
+  },
+  "error": {
+    "message": "Грешка",
+    "description": "Ознака за приказивање грешке"
+  },
+  "appUpdated": {
+    "message": "Aplikacija je ažurirana",
+    "description": "Oznaka za upozorenje o ažuriranju aplikacije"
+  },
+  "seeWhatIsNew": {
+    "message": "Pogledajte šta je novo",
+    "description": "Oznaka za opis šta je novo"
+  },
+  "view": {
+    "message": "Prikaži",
+    "description": "Oznaka za dugme za prikaz ažuriranja"
+  }
+}

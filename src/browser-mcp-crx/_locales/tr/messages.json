@@ -1,0 +1,73 @@
+{
+  "reviewTitle": {
+    "message": "$APP_NAME$ kullandığınız için teşekkür ederiz",
+    "description": "Uygulamayı kullandığı için kullanıcıya teşekkür et",
+    "placeholders": {
+      "app_name": {
+        "content": "$1",
+        "example": "AutoBrowser"
+      }
+    }
+  },
+  "reviewDescription": {
+    "message": "Merhaba, ben $NAME$. İnsanların zaman kazanmalarına ve görevlerini otomatikleştirmelerine yardımcı olmak için $APP_NAME$'yi yarattım. Onu kullanmaktan hoşlanıyorsanız, başkalarının $APP_NAME$'yi keşfetmesine yardımcı olmak için 5 yıldızlı bir değerlendirme bırakmanızdan memnuniyet duyarım. Çok teşekkürler!",
+    "description": "Kullanıcıdan uygulama için inceleme bırakmasını isteyin",
+    "placeholders": {
+      "name": {
+        "content": "Namu"
+      },
+      "app_name": {
+        "content": "$1",
+        "example": "AutoBrowser"
+      }
+    }
+  },
+  "addReview": {
+    "message": "İnceleme Ekle",
+    "description": "Uygulama için bir inceleme eklemek üzere düğme etiketi"
+  },
+  "dismiss": {
+    "message": "Reddet",
+    "description": "Uyarıyı kapatma eylemi"
+  },
+  "signIn": {
+    "message": "Oturum aç",
+    "description": "Oturum açma düğmesi için etiket"
+  },
+  "connect": {
+    "message": "Bağlan",
+    "description": "Bağlanma butonu için etiket"
+  },
+  "disconnect": {
+    "message": "Bağlantıyı Kes",
+    "description": "Bağlantıyı kesme düğmesi için etiket"
+  },
+  "focusConnectedTab": {
+    "message": "Bağlı sekmeye odaklan",
+    "description": "Bağlı sekmeye odaklanmak için buton etiketi"
+  },
+  "connectFromThisTab": {
+    "message": "Bu sekmeden bağlan",
+    "description": "Geçerli sekmeden bağlanmak için buton etiketi"
+  },
+  "invalidTab": {
+    "message": "Bu sayfa otomatikleştirilemez. Lütfen başka bir sayfa deneyin.",
+    "description": "Geçersiz sekme için hata mesajı"
+  },
+  "error": {
+    "message": "Hata",
+    "description": "Bir hatanın görüntülenmesi için etiket"
+  },
+  "appUpdated": {
+    "message": "Uygulama güncellendi",
+    "description": "Uygulama güncellendi uyarısı için etiket"
+  },
+  "seeWhatIsNew": {
+    "message": "Yeniliklere göz atın",
+    "description": "Yeniliklere göz atma açıklaması için etiket"
+  },
+  "view": {
+    "message": "Görüntüle",
+    "description": "Güncellemeyi görüntülemek için düğme etiketi"
+  }
+}

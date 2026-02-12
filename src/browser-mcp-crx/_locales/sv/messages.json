@@ -1,0 +1,73 @@
+{
+  "reviewTitle": {
+    "message": "Tack för att du använder $APP_NAME$",
+    "description": "Tacka användaren för att använda applikationen",
+    "placeholders": {
+      "app_name": {
+        "content": "$1",
+        "example": "AutoBrowser"
+      }
+    }
+  },
+  "reviewDescription": {
+    "message": "Hej, jag är $NAME$. Jag skapade $APP_NAME$ för att hjälpa människor att spara tid och automatisera sina uppgifter. Om du tycker om att använda den, skulle jag uppskatta ett 5-stjärnigt omdöme för att hjälpa andra att upptäcka $APP_NAME$. Tack så mycket!",
+    "description": "Be användaren att lämna en recension för applikationen",
+    "placeholders": {
+      "name": {
+        "content": "Namu"
+      },
+      "app_name": {
+        "content": "$1",
+        "example": "AutoBrowser"
+      }
+    }
+  },
+  "addReview": {
+    "message": "Lägg till en recension",
+    "description": "Etikett för knappen för att lägga till en recension för applikationen"
+  },
+  "dismiss": {
+    "message": "Avfärda",
+    "description": "Åtgärd för att avfärda varningen"
+  },
+  "signIn": {
+    "message": "Logga in",
+    "description": "Etikett för knappen för att logga in"
+  },
+  "connect": {
+    "message": "Anslut",
+    "description": "Etikett för knapp för att ansluta"
+  },
+  "disconnect": {
+    "message": "Koppla från",
+    "description": "Etikett för knapp för att koppla från"
+  },
+  "focusConnectedTab": {
+    "message": "Fokusera på ansluten flik",
+    "description": "Etikett för knapp för att fokusera på den anslutna fliken"
+  },
+  "connectFromThisTab": {
+    "message": "Anslut från den här fliken",
+    "description": "Etikett för knapp för att ansluta från den aktuella fliken"
+  },
+  "invalidTab": {
+    "message": "Den här sidan kan inte automatiseras. Försök med en annan sida.",
+    "description": "Felmeddelande för ogiltig flik"
+  },
+  "error": {
+    "message": "Fel",
+    "description": "Etikett för att visa ett fel"
+  },
+  "appUpdated": {
+    "message": "Appen har uppdaterats",
+    "description": "Etikett för uppdateringsvarning för appen"
+  },
+  "seeWhatIsNew": {
+    "message": "Se vad som är nytt",
+    "description": "Etikett för beskrivningen för att se vad som är nytt"
+  },
+  "view": {
+    "message": "Visa",
+    "description": "Etikett för knappen för att visa uppdateringen"
+  }
+}

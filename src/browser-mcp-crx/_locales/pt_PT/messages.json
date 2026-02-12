@@ -1,0 +1,73 @@
+{
+  "reviewTitle": {
+    "message": "Obrigado por usar o $APP_NAME$",
+    "description": "Agradecer ao utilizador por usar a aplicação",
+    "placeholders": {
+      "app_name": {
+        "content": "$1",
+        "example": "AutoBrowser"
+      }
+    }
+  },
+  "reviewDescription": {
+    "message": "Olá, sou o $NAME$. Criei o $APP_NAME$ para ajudar as pessoas a pouparem tempo e a automatizarem as suas tarefas. Se gostares de utilizá-lo, agradeceria uma classificação de 5 estrelas para ajudar outros a descobrirem o $APP_NAME$. Muito obrigado!",
+    "description": "Peça ao utilizador para deixar uma avaliação para a aplicação",
+    "placeholders": {
+      "name": {
+        "content": "Namu"
+      },
+      "app_name": {
+        "content": "$1",
+        "example": "AutoBrowser"
+      }
+    }
+  },
+  "addReview": {
+    "message": "Adicionar uma avaliação",
+    "description": "Rótulo para o botão de adicionar uma avaliação para a aplicação"
+  },
+  "dismiss": {
+    "message": "Ignorar",
+    "description": "Ação para ignorar o alerta"
+  },
+  "signIn": {
+    "message": "Iniciar sessão",
+    "description": "Rótulo para o botão de iniciar sessão"
+  },
+  "connect": {
+    "message": "Ligar",
+    "description": "Rótulo para botão de ligar"
+  },
+  "disconnect": {
+    "message": "Desligar",
+    "description": "Etiqueta para botão de desligar"
+  },
+  "focusConnectedTab": {
+    "message": "Focar no separador conectado",
+    "description": "Rótulo para o botão para focar no separador conectado"
+  },
+  "connectFromThisTab": {
+    "message": "Ligar a partir deste separador",
+    "description": "Etiqueta para o botão de ligação a partir do separador atual"
+  },
+  "invalidTab": {
+    "message": "Esta página não pode ser automatizada. Por favor, tente uma página diferente.",
+    "description": "Mensagem de erro para separador inválido"
+  },
+  "error": {
+    "message": "Erro",
+    "description": "Rótulo para exibir um erro"
+  },
+  "appUpdated": {
+    "message": "Aplicação atualizada",
+    "description": "Rótulo para o alerta de aplicação atualizada"
+  },
+  "seeWhatIsNew": {
+    "message": "Veja as novidades",
+    "description": "Rótulo para a descrição para ver as novidades"
+  },
+  "view": {
+    "message": "Ver",
+    "description": "Rótulo para o botão para ver a atualização"
+  }
+}

@@ -14,11 +14,13 @@ A Claude Code Skill for browser automation via WebSocket communication with the 
 
 ### Core Capabilities
 - **Page Navigation** - Navigate to URLs, go back/forward
-- **Element Interaction** - Click, hover, type text, select options, drag elements
+- **Element Interaction** - Click (ref or coordinates), hover, type text, select options, drag elements
+- **Element Search** - Search elements by keyword, get element coordinates
+- **Multi-Tab Management** - List, open, switch, close tabs
 - **Screenshots** - Capture visible page as PNG (save to file or return base64)
 - **Page Snapshots** - Get ARIA accessibility tree for structured page analysis
+- **Page Content** - Get plain text content, full HTML source code
 - **Keyboard Input** - Press any key, submit forms
-- **Page Source** - Get full HTML source code and save to file
 - **Console Logs** - Retrieve browser console output
 
 ### Architecture
@@ -55,7 +57,7 @@ git clone https://github.com/Tonyhzk/chrome-agent-skill.git
 
 1. Open `chrome://extensions/` in Chrome
 2. Enable **Developer mode**
-3. Drag the `.crx` file from `src/browser-chrome-agent/assets/` into the page to install; or unzip `Browser_MCP_1_3_4_modified.zip` and use "Load unpacked" (modified version with page source support)
+3. Unzip the `.zip` extension package from `src/browser-chrome-agent/assets/`, then click "Load unpacked" and select the unzipped directory; or load the `src/browser-mcp-crx/` source directory directly
 4. Pin the Browser MCP extension for easy access
 
 ### 3. Install Python Dependencies
@@ -108,17 +110,25 @@ Send JSON commands via stdin (one per line):
 | `navigate` | `{"url": "..."}` | Navigate to URL |
 | `go_back` | `{}` | Go back |
 | `go_forward` | `{}` | Go forward |
-| `click` | `{"ref": "s1e5"}` | Click element |
+| `click` | `{"ref": "s1e5"}` or `{"x": 500, "y": 100}` | Click element (ref or coordinates) |
 | `hover` | `{"ref": "s1e5"}` | Hover over element |
 | `type` | `{"ref": "s1e5", "text": "...", "submit": false}` | Type text |
 | `select_option` | `{"ref": "s1e5", "values": ["..."]}` | Select dropdown option |
 | `drag` | `{"startRef": "s1e5", "endRef": "s1e8"}` | Drag element |
 | `press_key` | `{"key": "Enter"}` | Press key |
+| `get_coordinates` | `{"ref": "s1e5"}` | Get element coordinates |
+| `find_element` | `{"keyword": "search"}` | Search elements by keyword, return matching refs |
+| `find_and_locate` | `{"keyword": "search", "index": 0}` | Search element and get coordinates immediately |
+| `get_text` | `{}` or `{"max_length": 5000}` | Get page plain text content |
 | `wait` | `{"time": 2}` | Wait (seconds) |
 | `screenshot` | `{}` or `{"savePath": "path"}` | Capture screenshot |
 | `snapshot` | `{}` | Get ARIA page snapshot |
 | `get_html` | `{"savePath": "path"}` | Get full page HTML source and save to file |
 | `get_console_logs` | `{}` | Get console logs |
+| `list_tabs` | `{}` | List all tabs |
+| `new_tab` | `{"url": "..."}` | Open new tab (url optional) |
+| `switch_tab` | `{"tabId": 123456}` | Switch to specified tab |
+| `close_tab` | `{"tabId": 123456}` | Close specified tab |
 | `status` | - | Check connection status |
 | `quit` | - | Shut down server |
 
@@ -142,6 +152,8 @@ chrome-agent-skill/
 │   │   ├── batch_resolve_urls.py  # Batch URL resolver
 │   │   └── requirements.txt  # Python dependencies
 │   └── assets/               # Chrome extension packages
+├── src/browser-mcp-crx/      # Modified Chrome extension source code
+├── upstream/                 # Original Browser MCP extension & source archive
 ├── 0_Doc/                    # Documentation
 ├── 0_Design/                 # Design resources
 ├── setup_claude_dir.py       # Shared config symlink tool

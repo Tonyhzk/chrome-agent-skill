@@ -1,0 +1,73 @@
+{
+  "reviewTitle": {
+    "message": "Salamat sa paggamit ng $APP_NAME$",
+    "description": "Pasalamatan ang gumagamit sa paggamit ng aplikasyon",
+    "placeholders": {
+      "app_name": {
+        "content": "$1",
+        "example": "AutoBrowser"
+      }
+    }
+  },
+  "reviewDescription": {
+    "message": "Hi, ako si $NAME$. Nilikha ko ang $APP_NAME$ upang makatulong sa mga tao na makatipid ng oras at i-automate ang kanilang mga gawain. Kung nag-eenjoy ka sa paggamit nito, ikagagalak ko ang 5-star na rating upang matulungan ang iba na matuklasan ang $APP_NAME$. Maraming salamat!",
+    "description": "Hingin ang user na mag-iwan ng review para sa application",
+    "placeholders": {
+      "name": {
+        "content": "Namu"
+      },
+      "app_name": {
+        "content": "$1",
+        "example": "AutoBrowser"
+      }
+    }
+  },
+  "addReview": {
+    "message": "Magdagdag ng Review",
+    "description": "Label para sa button na magdagdag ng review para sa aplikasyon"
+  },
+  "dismiss": {
+    "message": "I-dismiss",
+    "description": "Aksyon upang i-dismiss ang alerto"
+  },
+  "signIn": {
+    "message": "Mag-sign in",
+    "description": "Label para sa pindutan ng pag-sign in"
+  },
+  "connect": {
+    "message": "Ikonekta",
+    "description": "Label para sa pindutan upang kumonekta"
+  },
+  "disconnect": {
+    "message": "Idiskonekta",
+    "description": "Label para sa pindutan na idiskonekta"
+  },
+  "focusConnectedTab": {
+    "message": "Tumutok sa konektadong tab",
+    "description": "Label para sa button upang tumutok sa konektadong tab"
+  },
+  "connectFromThisTab": {
+    "message": "Kumonekta mula sa tab na ito",
+    "description": "Label para sa button upang kumonekta mula sa kasalukuyang tab"
+  },
+  "invalidTab": {
+    "message": "Ang page na ito ay hindi maaring i-automate. Mangyaring subukan ang ibang page.",
+    "description": "Mensahe ng error para sa hindi wastong tab"
+  },
+  "error": {
+    "message": "Error",
+    "description": "Label para sa pagpapakita ng error"
+  },
+  "appUpdated": {
+    "message": "Na-update ang app",
+    "description": "Label para sa alerto ng pag-update ng app"
+  },
+  "seeWhatIsNew": {
+    "message": "Tingnan kung ano ang bago",
+    "description": "Label para sa deskripsyon na makita kung ano ang bago"
+  },
+  "view": {
+    "message": "Tingnan",
+    "description": "Label para sa button upang tingnan ang update"
+  }
+}

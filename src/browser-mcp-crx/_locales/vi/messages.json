@@ -1,0 +1,73 @@
+{
+  "reviewTitle": {
+    "message": "Cảm ơn bạn đã sử dụng $APP_NAME$",
+    "description": "Cảm ơn người dùng vì đã sử dụng ứng dụng",
+    "placeholders": {
+      "app_name": {
+        "content": "$1",
+        "example": "AutoBrowser"
+      }
+    }
+  },
+  "reviewDescription": {
+    "message": "Chào bạn, tôi là $NAME$. Tôi đã tạo ra $APP_NAME$ để giúp mọi người tiết kiệm thời gian và tự động hóa công việc của họ. Nếu bạn thích sử dụng nó, tôi sẽ rất biết ơn nếu bạn có thể để lại đánh giá 5 sao để giúp người khác khám phá $APP_NAME$. Cảm ơn rất nhiều!",
+    "description": "Yêu cầu người dùng để lại đánh giá cho ứng dụng",
+    "placeholders": {
+      "name": {
+        "content": "Namu"
+      },
+      "app_name": {
+        "content": "$1",
+        "example": "AutoBrowser"
+      }
+    }
+  },
+  "addReview": {
+    "message": "Thêm đánh giá",
+    "description": "Nhãn cho nút để thêm đánh giá cho ứng dụng"
+  },
+  "dismiss": {
+    "message": "Bỏ qua",
+    "description": "Hành động để bỏ qua cảnh báo"
+  },
+  "signIn": {
+    "message": "Đăng nhập",
+    "description": "Nhãn cho nút để đăng nhập"
+  },
+  "connect": {
+    "message": "Kết nối",
+    "description": "Nhãn cho nút kết nối"
+  },
+  "disconnect": {
+    "message": "Ngắt kết nối",
+    "description": "Nhãn cho nút để ngắt kết nối"
+  },
+  "focusConnectedTab": {
+    "message": "Tập trung vào tab đã kết nối",
+    "description": "Nhãn cho nút để tập trung vào tab đã kết nối"
+  },
+  "connectFromThisTab": {
+    "message": "Kết nối từ tab này",
+    "description": "Nhãn cho nút để kết nối từ tab hiện tại"
+  },
+  "invalidTab": {
+    "message": "Trang này không thể tự động hóa. Vui lòng thử một trang khác.",
+    "description": "Thông báo lỗi cho tab không hợp lệ"
+  },
+  "error": {
+    "message": "Lỗi",
+    "description": "Nhãn để hiển thị lỗi"
+  },
+  "appUpdated": {
+    "message": "Ứng dụng đã được cập nhật",
+    "description": "Nhãn cho cảnh báo ứng dụng đã được cập nhật"
+  },
+  "seeWhatIsNew": {
+    "message": "Xem có gì mới",
+    "description": "Nhãn cho mô tả để xem có gì mới"
+  },
+  "view": {
+    "message": "Xem",
+    "description": "Nhãn cho nút để xem bản cập nhật"
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "reviewTitle": {
+    "message": "Hvala za uporabo $APP_NAME$",
+    "description": "Zahvalite se uporabniku za uporabo aplikacije",
+    "placeholders": {
+      "app_name": {
+        "content": "$1",
+        "example": "AutoBrowser"
+      }
+    }
+  },
+  "reviewDescription": {
+    "message": "Živjo, jaz sem $NAME$. Ustvaril sem $APP_NAME$, da bi ljudem pomagal prihraniti čas in avtomatizirati njihove naloge. Če vam je všeč uporaba, bi bil hvaležen za oceno s 5 zvezdicami, da lahko tudi drugi odkrijejo $APP_NAME$. Najlepša hvala!",
+    "description": "Uporabnika prosite, da pusti mnenje za aplikacijo",
+    "placeholders": {
+      "name": {
+        "content": "Namu"
+      },
+      "app_name": {
+        "content": "$1",
+        "example": "AutoBrowser"
+      }
+    }
+  },
+  "addReview": {
+    "message": "Dodaj mnenje",
+    "description": "Oznaka za gumb za dodajanje mnenja o aplikaciji"
+  },
+  "dismiss": {
+    "message": "Opusti",
+    "description": "Dejanje za opustitev opozorila"
+  },
+  "signIn": {
+    "message": "Prijava",
+    "description": "Oznaka za gumb za prijavo"
+  },
+  "connect": {
+    "message": "Poveži",
+    "description": "Oznaka za gumb za povezavo"
+  },
+  "disconnect": {
+    "message": "Odklopi",
+    "description": "Oznaka za gumb za odklop"
+  },
+  "focusConnectedTab": {
+    "message": "Osredotoči se na povezan zavihek",
+    "description": "Oznaka za gumb za osredotočenje na povezan zavihek"
+  },
+  "connectFromThisTab": {
+    "message": "Poveži se iz tega zavihka",
+    "description": "Oznaka za gumb za povezavo iz trenutnega zavihka"
+  },
+  "invalidTab": {
+    "message": "Te strani ni mogoče avtomatizirati. Prosimo, poskusite drugo stran.",
+    "description": "Sporočilo o napaki za neveljaven zavihek"
+  },
+  "error": {
+    "message": "Napaka",
+    "description": "Oznaka za prikaz napake"
+  },
+  "appUpdated": {
+    "message": "Aplikacija posodobljena",
+    "description": "Oznaka za opozorilo o posodobitvi aplikacije"
+  },
+  "seeWhatIsNew": {
+    "message": "Poglejte, kaj je novega",
+    "description": "Oznaka za opis, da vidite, kaj je novega"
+  },
+  "view": {
+    "message": "Poglej",
+    "description": "Oznaka za gumb za ogled posodobitve"
+  }
+}

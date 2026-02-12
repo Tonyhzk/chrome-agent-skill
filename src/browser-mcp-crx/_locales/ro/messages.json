@@ -1,0 +1,73 @@
+{
+  "reviewTitle": {
+    "message": "Mulțumim că folosiți $APP_NAME$",
+    "description": "Mulțumește utilizatorului că folosește aplicația",
+    "placeholders": {
+      "app_name": {
+        "content": "$1",
+        "example": "AutoBrowser"
+      }
+    }
+  },
+  "reviewDescription": {
+    "message": "Bună, sunt $NAME$. Am creat $APP_NAME$ pentru a ajuta oamenii să economisească timp și să-și automatizeze sarcinile. Dacă îți place să-l folosești, aș aprecia o evaluare de 5 stele pentru a ajuta și alți utilizatori să descopere $APP_NAME$. Îți mulțumesc mult!",
+    "description": "Solicită utilizatorului să lase o recenzie pentru aplicație",
+    "placeholders": {
+      "name": {
+        "content": "Namu"
+      },
+      "app_name": {
+        "content": "$1",
+        "example": "AutoBrowser"
+      }
+    }
+  },
+  "addReview": {
+    "message": "Adaugă o recenzie",
+    "description": "Etichetă pentru butonul de a adăuga o recenzie pentru aplicație"
+  },
+  "dismiss": {
+    "message": "Respinge",
+    "description": "Acțiune de respingere a alertei"
+  },
+  "signIn": {
+    "message": "Autentifică-te",
+    "description": "Etichetă pentru butonul de autentificare"
+  },
+  "connect": {
+    "message": "Conectați-vă",
+    "description": "Etichetă pentru butonul de conectare"
+  },
+  "disconnect": {
+    "message": "Deconectare",
+    "description": "Etichetă pentru butonul de deconectare"
+  },
+  "focusConnectedTab": {
+    "message": "Focalizează fila conectată",
+    "description": "Etichetă pentru butonul de focalizare a filei conectate"
+  },
+  "connectFromThisTab": {
+    "message": "Conectare din acest tab",
+    "description": "Eticheta pentru butonul de conectare din tab-ul curent"
+  },
+  "invalidTab": {
+    "message": "Această pagină nu poate fi automatizată. Vă rugăm să încercați o altă pagină.",
+    "description": "Mesaj de eroare pentru filă invalidă"
+  },
+  "error": {
+    "message": "Eroare",
+    "description": "Etichetă pentru afișarea unei erori"
+  },
+  "appUpdated": {
+    "message": "Aplicația a fost actualizată",
+    "description": "Etichetă pentru alerta de actualizare a aplicației"
+  },
+  "seeWhatIsNew": {
+    "message": "Vezi noutăţile",
+    "description": "Etichetă pentru descrierea de a vedea noutăţile"
+  },
+  "view": {
+    "message": "Vizualizare",
+    "description": "Etichetă pentru butonul de vizualizare a actualizării"
+  }
+}

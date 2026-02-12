@@ -1,0 +1,73 @@
+{
+  "reviewTitle": {
+    "message": "$APP_NAME$ をご利用いただきありがとうございます",
+    "description": "アプリケーションを使用しているユーザーに感謝の意を示す",
+    "placeholders": {
+      "app_name": {
+        "content": "$1",
+        "example": "AutoBrowser"
+      }
+    }
+  },
+  "reviewDescription": {
+    "message": "こんにちは、私は$NAME$です。時間を節約し、タスクを自動化するために$APP_NAME$を作りました。もし楽しんで使っていただけているなら、他の人に$APP_NAME$を見つけてもらえるように5つ星の評価をいただけると嬉しいです。どうもありがとうございます！",
+    "description": "アプリケーションのレビューを残すようにユーザーに依頼する",
+    "placeholders": {
+      "name": {
+        "content": "Namu"
+      },
+      "app_name": {
+        "content": "$1",
+        "example": "AutoBrowser"
+      }
+    }
+  },
+  "addReview": {
+    "message": "レビューを追加",
+    "description": "アプリケーションのレビューを追加するボタンのラベル"
+  },
+  "dismiss": {
+    "message": "閉じる",
+    "description": "アラートを閉じるための操作"
+  },
+  "signIn": {
+    "message": "サインイン",
+    "description": "サインインボタンのラベル"
+  },
+  "connect": {
+    "message": "接続",
+    "description": "接続ボタンのラベル"
+  },
+  "disconnect": {
+    "message": "切断",
+    "description": "切断するボタンのラベル"
+  },
+  "focusConnectedTab": {
+    "message": "接続されたタブにフォーカス",
+    "description": "接続されたタブにフォーカスするボタンのラベル"
+  },
+  "connectFromThisTab": {
+    "message": "このタブから接続",
+    "description": "現在のタブから接続するためのボタンのラベル"
+  },
+  "invalidTab": {
+    "message": "このページは自動化できません。別のページを試してください。",
+    "description": "無効なタブのエラーメッセージ"
+  },
+  "error": {
+    "message": "エラー",
+    "description": "エラーを表示するためのラベル"
+  },
+  "appUpdated": {
+    "message": "アプリが更新されました",
+    "description": "アプリ更新アラートのラベル"
+  },
+  "seeWhatIsNew": {
+    "message": "新機能を見る",
+    "description": "新機能を見るための説明用ラベル"
+  },
+  "view": {
+    "message": "表示",
+    "description": "更新を表示するボタンのラベル"
+  }
+}

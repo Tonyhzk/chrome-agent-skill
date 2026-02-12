@@ -1,0 +1,73 @@
+{
+  "reviewTitle": {
+    "message": "Paldies, ka izmantojat $APP_NAME$",
+    "description": "Pateicieties lietotājam par lietojumprogrammas izmantošanu",
+    "placeholders": {
+      "app_name": {
+        "content": "$1",
+        "example": "AutoBrowser"
+      }
+    }
+  },
+  "reviewDescription": {
+    "message": "Sveiki, es esmu $NAME$. Es izveidoju $APP_NAME$, lai palīdzētu cilvēkiem ietaupīt laiku un automatizēt viņu uzdevumus. Ja jums patīk to lietot, es būtu pateicīgs par 5 zvaigžņu vērtējumu, lai palīdzētu citiem atklāt $APP_NAME$. Liels paldies!",
+    "description": "Palūdziet lietotājam atstāt atsauksmi par lietotni",
+    "placeholders": {
+      "name": {
+        "content": "Namu"
+      },
+      "app_name": {
+        "content": "$1",
+        "example": "AutoBrowser"
+      }
+    }
+  },
+  "addReview": {
+    "message": "Pievienot atsauksmi",
+    "description": "Poga, lai pievienotu atsauksmi par lietojumprogrammu"
+  },
+  "dismiss": {
+    "message": "Aizvērt",
+    "description": "Darbība, lai aizvērtu brīdinājumu"
+  },
+  "signIn": {
+    "message": "Pierakstīties",
+    "description": "Pogas nosaukums, lai pierakstītos"
+  },
+  "connect": {
+    "message": "Savienot",
+    "description": "Pogas nosaukums, lai savienotu"
+  },
+  "disconnect": {
+    "message": "Atvienoties",
+    "description": "Poga, lai atvienotos"
+  },
+  "focusConnectedTab": {
+    "message": "Fokusēt savienoto cilni",
+    "description": "Poga, lai fokusētu savienoto cilni"
+  },
+  "connectFromThisTab": {
+    "message": "Pievienoties no šīs cilnes",
+    "description": "Poga, lai pievienotos no pašreizējās cilnes"
+  },
+  "invalidTab": {
+    "message": "Šo lapu nevar automatizēt. Lūdzu, mēģiniet citu lapu.",
+    "description": "Kļūdas ziņojums par nederīgu cilni"
+  },
+  "error": {
+    "message": "Kļūda",
+    "description": "Etiķete kļūdas attēlošanai"
+  },
+  "appUpdated": {
+    "message": "Lietotne atjaunināta",
+    "description": "Etiķete paziņojumam par lietotnes atjauninājumu"
+  },
+  "seeWhatIsNew": {
+    "message": "Skatīt, kas jauns",
+    "description": "Apraksta etiķete, lai skatītu, kas jauns"
+  },
+  "view": {
+    "message": "Skatīt",
+    "description": "Poga, lai skatītu atjauninājumu"
+  }
+}

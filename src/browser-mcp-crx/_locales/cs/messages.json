@@ -1,0 +1,73 @@
+{
+  "reviewTitle": {
+    "message": "Děkujeme za používání $APP_NAME$",
+    "description": "Poděkování uživateli za používání aplikace",
+    "placeholders": {
+      "app_name": {
+        "content": "$1",
+        "example": "AutoBrowser"
+      }
+    }
+  },
+  "reviewDescription": {
+    "message": "Ahoj, jsem $NAME$. Vytvořil jsem $APP_NAME$, aby lidem pomohl šetřit čas a automatizovat jejich úkoly. Pokud se vám líbí ji používat, ocenil bych 5hvězdičkové hodnocení, aby ostatní mohli objevit $APP_NAME$. Moc děkuji!",
+    "description": "Požádejte uživatele, aby zanechal recenzi na aplikaci",
+    "placeholders": {
+      "name": {
+        "content": "Namu"
+      },
+      "app_name": {
+        "content": "$1",
+        "example": "AutoBrowser"
+      }
+    }
+  },
+  "addReview": {
+    "message": "Přidat recenzi",
+    "description": "Označení tlačítka pro přidání recenze aplikace"
+  },
+  "dismiss": {
+    "message": "Zavřít",
+    "description": "Akce pro zavření upozornění"
+  },
+  "signIn": {
+    "message": "Přihlásit se",
+    "description": "Označení tlačítka pro přihlášení"
+  },
+  "connect": {
+    "message": "Připojit",
+    "description": "Popisek pro tlačítko k připojení"
+  },
+  "disconnect": {
+    "message": "Odpojit",
+    "description": "Štítek pro tlačítko pro odpojení"
+  },
+  "focusConnectedTab": {
+    "message": "Zaměřit se na připojenou kartu",
+    "description": "Popisek tlačítka pro zaměření se na připojenou kartu"
+  },
+  "connectFromThisTab": {
+    "message": "Připojit z této karty",
+    "description": "Štítek pro tlačítko k připojení z aktuální karty"
+  },
+  "invalidTab": {
+    "message": "Tuto stránku nelze automatizovat. Zkuste prosím jinou stránku.",
+    "description": "Chybová zpráva pro neplatnou kartu"
+  },
+  "error": {
+    "message": "Chyba",
+    "description": "Označení pro zobrazení chyby"
+  },
+  "appUpdated": {
+    "message": "Aplikace byla aktualizována",
+    "description": "Štítek pro upozornění na aktualizaci aplikace"
+  },
+  "seeWhatIsNew": {
+    "message": "Podívejte se, co je nového",
+    "description": "Popis pro popisek k zobrazení, co je nového"
+  },
+  "view": {
+    "message": "Zobrazit",
+    "description": "Označení pro tlačítko k zobrazení aktualizace"
+  }
+}

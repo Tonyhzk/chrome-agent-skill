@@ -1,0 +1,73 @@
+{
+  "reviewTitle": {
+    "message": "Köszönjük, hogy használja a(z) $APP_NAME$ alkalmazást",
+    "description": "Köszönd meg a felhasználónak az alkalmazás használatát",
+    "placeholders": {
+      "app_name": {
+        "content": "$1",
+        "example": "AutoBrowser"
+      }
+    }
+  },
+  "reviewDescription": {
+    "message": "Szia, $NAME$ vagyok. Azért hoztam létre a $APP_NAME$-t, hogy segítsek az embereknek időt spórolni és automatizálni a feladataikat. Ha élvezettel használod, hálás lennék egy 5 csillagos értékelésért, hogy mások is felfedezhessék a $APP_NAME$-t. Nagyon köszönöm!",
+    "description": "Kérd meg a felhasználót, hogy hagyjon véleményt az alkalmazásról",
+    "placeholders": {
+      "name": {
+        "content": "Namu"
+      },
+      "app_name": {
+        "content": "$1",
+        "example": "AutoBrowser"
+      }
+    }
+  },
+  "addReview": {
+    "message": "Értékelés hozzáadása",
+    "description": "Gomb címkéje az alkalmazás értékelésének hozzáadásához"
+  },
+  "dismiss": {
+    "message": "Elvetés",
+    "description": "Művelet az értesítés elvetésére"
+  },
+  "signIn": {
+    "message": "Bejelentkezés",
+    "description": "Felirat a bejelentkezés gombhoz"
+  },
+  "connect": {
+    "message": "Csatlakozás",
+    "description": "Gomb címke a csatlakozáshoz"
+  },
+  "disconnect": {
+    "message": "Szétkapcsolás",
+    "description": "Gomb címkéje a kapcsolat bontásához"
+  },
+  "focusConnectedTab": {
+    "message": "Kapcsolódó lap fókuszálása",
+    "description": "Gomb címkéje a kapcsolódó lap fókuszálásához"
+  },
+  "connectFromThisTab": {
+    "message": "Csatlakozás ebből a lapról",
+    "description": "Gomb felirata a jelenlegi lapról való csatlakozáshoz"
+  },
+  "invalidTab": {
+    "message": "Ez az oldal nem automatizálható. Próbálkozzon egy másik oldallal.",
+    "description": "Hibaüzenet érvénytelen lap esetén"
+  },
+  "error": {
+    "message": "Hiba",
+    "description": "Címke egy hiba megjelenítéséhez"
+  },
+  "appUpdated": {
+    "message": "Alkalmazás frissítve",
+    "description": "Címke az alkalmazás frissítésére figyelmeztető értesítéshez"
+  },
+  "seeWhatIsNew": {
+    "message": "Nézze meg a legújabbakat",
+    "description": "Címke az új dolgok megtekintésére"
+  },
+  "view": {
+    "message": "Megtekintés",
+    "description": "Felirat a frissítés megtekintésére szolgáló gombhoz"
+  }
+}

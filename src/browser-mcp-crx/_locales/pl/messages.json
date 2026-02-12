@@ -1,0 +1,73 @@
+{
+  "reviewTitle": {
+    "message": "Dziękujemy za korzystanie z $APP_NAME$",
+    "description": "Podziękuj użytkownikowi za korzystanie z aplikacji",
+    "placeholders": {
+      "app_name": {
+        "content": "$1",
+        "example": "AutoBrowser"
+      }
+    }
+  },
+  "reviewDescription": {
+    "message": "Cześć, jestem $NAME$. Stworzyłem $APP_NAME$, aby pomóc ludziom oszczędzać czas i automatyzować ich zadania. Jeśli lubisz go używać, prosiłbym o przyznanie 5-gwiazdkowej oceny, aby pomóc innym odkryć $APP_NAME$. Bardzo dziękuję!",
+    "description": "Prośba o pozostawienie recenzji dla aplikacji",
+    "placeholders": {
+      "name": {
+        "content": "Namu"
+      },
+      "app_name": {
+        "content": "$1",
+        "example": "AutoBrowser"
+      }
+    }
+  },
+  "addReview": {
+    "message": "Dodaj recenzję",
+    "description": "Etykieta dla przycisku dodawania recenzji aplikacji"
+  },
+  "dismiss": {
+    "message": "Zamknij",
+    "description": "Akcja zamknięcia alertu"
+  },
+  "signIn": {
+    "message": "Zaloguj się",
+    "description": "Etykieta dla przycisku do logowania"
+  },
+  "connect": {
+    "message": "Połącz",
+    "description": "Etykieta dla przycisku do połączenia"
+  },
+  "disconnect": {
+    "message": "Odłącz",
+    "description": "Etykieta dla przycisku do odłączenia"
+  },
+  "focusConnectedTab": {
+    "message": "Skup się na połączonej karcie",
+    "description": "Etykieta do przycisku, aby skupić się na połączonej karcie"
+  },
+  "connectFromThisTab": {
+    "message": "Połącz z tej karty",
+    "description": "Etykieta dla przycisku łączenia z bieżącej karty"
+  },
+  "invalidTab": {
+    "message": "Nie można zautomatyzować tej strony. Spróbuj innej strony.",
+    "description": "Komunikat o błędzie dla nieprawidłowej karty"
+  },
+  "error": {
+    "message": "Błąd",
+    "description": "Etykieta do wyświetlania błędu"
+  },
+  "appUpdated": {
+    "message": "Aplikacja zaktualizowana",
+    "description": "Etykieta dla alertu o zaktualizowanej aplikacji"
+  },
+  "seeWhatIsNew": {
+    "message": "Zobacz, co nowego",
+    "description": "Etykieta opisu, aby zobaczyć, co nowego"
+  },
+  "view": {
+    "message": "Zobacz",
+    "description": "Etykieta dla przycisku, aby zobaczyć aktualizację"
+  }
+}

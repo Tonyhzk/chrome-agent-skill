@@ -1,0 +1,73 @@
+{
+  "reviewTitle": {
+    "message": "Takk for at du bruker $APP_NAME$",
+    "description": "Takk brukeren for at de bruker applikasjonen",
+    "placeholders": {
+      "app_name": {
+        "content": "$1",
+        "example": "AutoBrowser"
+      }
+    }
+  },
+  "reviewDescription": {
+    "message": "Hei, jeg er $NAME$. Jeg opprettet $APP_NAME$ for å hjelpe folk med å spare tid og automatisere oppgavene sine. Hvis du liker å bruke den, vil jeg sette pris på en 5-stjerners vurdering for å hjelpe andre med å oppdage $APP_NAME$. Tusen takk!",
+    "description": "Be brukeren om å legge igjen en anmeldelse for applikasjonen",
+    "placeholders": {
+      "name": {
+        "content": "Namu"
+      },
+      "app_name": {
+        "content": "$1",
+        "example": "AutoBrowser"
+      }
+    }
+  },
+  "addReview": {
+    "message": "Legg til en anmeldelse",
+    "description": "Etikett for knappen for å legge til en anmeldelse for applikasjonen"
+  },
+  "dismiss": {
+    "message": "Lukk",
+    "description": "Handling for å lukke varselet"
+  },
+  "signIn": {
+    "message": "Logg inn",
+    "description": "Etikett for knappen for å logge inn"
+  },
+  "connect": {
+    "message": "Koble til",
+    "description": "Etikett for knapp for å koble til"
+  },
+  "disconnect": {
+    "message": "Koble fra",
+    "description": "Beskrivelse for knapp for å koble fra"
+  },
+  "focusConnectedTab": {
+    "message": "Fokuser på tilkoblet fane",
+    "description": "Etikett for knapp for å fokusere på den tilkoblede fanen"
+  },
+  "connectFromThisTab": {
+    "message": "Koble fra denne fanen",
+    "description": "Etikett for knapp for å koble fra den gjeldende fanen"
+  },
+  "invalidTab": {
+    "message": "Denne siden kan ikke automatiseres. Vennligst prøv en annen side.",
+    "description": "Feilmelding for ugyldig fane"
+  },
+  "error": {
+    "message": "Feil",
+    "description": "Merkelapp for å vise en feil"
+  },
+  "appUpdated": {
+    "message": "Appen ble oppdatert",
+    "description": "Etikett for varselet om appen er oppdatert"
+  },
+  "seeWhatIsNew": {
+    "message": "Se hva som er nytt",
+    "description": "Etikett for beskrivelsen for å se hva som er nytt"
+  },
+  "view": {
+    "message": "Vis",
+    "description": "Etikett for knappen for å se oppdateringen"
+  }
+}

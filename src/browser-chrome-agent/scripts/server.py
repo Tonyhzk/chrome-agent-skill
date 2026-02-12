@@ -129,12 +129,30 @@ async def execute_command(context: Context, action: str, params: dict) -> dict:
 
 async def stdin_reader(context: Context):
     """从 stdin 读取 JSON 命令并执行（交互模式）"""
+    # 关闭终端回显，避免 tmux send-keys 的输入被回显到 pane
+    # 这样 pane 中只有 server.py 主动输出的内容
+    import termios
+    try:
+        fd = sys.stdin.fileno()
+        old_attrs = termios.tcgetattr(fd)
+        new_attrs = termios.tcgetattr(fd)
+        new_attrs[3] = new_attrs[3] & ~termios.ECHO  # 关闭 ECHO 标志
+        termios.tcsetattr(fd, termios.TCSANOW, new_attrs)
+    except (termios.error, OSError):
+        old_attrs = None  # 非 tty 环境，跳过
+
     loop = asyncio.get_event_loop()
     reader = asyncio.StreamReader()
     protocol = asyncio.StreamReaderProtocol(reader)
     await loop.connect_read_pipe(lambda: protocol, sys.stdin)
 
     log("[server] 交互模式就绪，等待命令...")
+
+    # 持久终端 exec 的 marker 缓存
+    # exec 会发送 echo 'MARKER_START' → 命令 → echo 'MARKER_END'
+    # 由于 server.py 占据 stdin，这些 echo 行也进入 stdin
+    # 我们需要识别并在命令完成后将 marker 回显到 stderr（tmux pane 可见）
+    pending_marker_id = None  # 当前活跃的 marker ID（如 __CMD_1770870023391__）
 
     while True:
         try:
@@ -145,10 +163,27 @@ async def stdin_reader(context: Context):
             if not line:
                 continue
 
+            # 检测持久终端的 marker 行: echo '__CMD_xxx___START' 或 echo '__CMD_xxx___END'
+            if line.startswith("echo '__CMD_") and line.endswith("'"):
+                marker_content = line[6:-1]  # 提取引号内的 marker
+                if marker_content.endswith("_START"):
+                    # 提取 marker ID（去掉 _START 后缀）
+                    pending_marker_id = marker_content[:-6]  # __CMD_xxx__
+                    log(marker_content)  # 回显到 stderr（tmux 可见）
+                elif marker_content.endswith("_END"):
+                    end_id = marker_content[:-4]  # __CMD_xxx__
+                    if end_id == pending_marker_id:
+                        # START 和 END 配对，暂存等命令完成后回显
+                        pass  # 会在命令执行完后回显
+                    else:
+                        # 不配对的 END（如服务器启动时残留的），直接忽略
+                        pass
+                continue
+
             try:
                 cmd = json.loads(line)
             except json.JSONDecodeError:
-                output({"success": False, "error": f"无效 JSON: {line[:100]}"})
+                # 静默忽略非 JSON 行
                 continue
 
             action = cmd.get("action", "")
@@ -157,11 +192,19 @@ async def stdin_reader(context: Context):
             result = await execute_command(context, action, params)
             output(result)
 
+            # 命令完成后回显 END marker，让持久终端的 exec 能检测到完成
+            if pending_marker_id:
+                log(f"{pending_marker_id}_END")
+                pending_marker_id = None
+
             if action == "quit":
                 break
 
         except Exception as e:
             output({"success": False, "error": f"内部错误: {e}"})
+            if pending_marker_id:
+                log(f"{pending_marker_id}_END")
+                pending_marker_id = None
 
 
 async def run_server(port: int, action: str = None, params: dict = None):

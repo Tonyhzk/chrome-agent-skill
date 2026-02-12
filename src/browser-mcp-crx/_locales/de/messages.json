@@ -1,0 +1,73 @@
+{
+  "reviewTitle": {
+    "message": "Danke, dass Sie $APP_NAME$ verwenden",
+    "description": "Dankt dem Benutzer für die Nutzung der Anwendung",
+    "placeholders": {
+      "app_name": {
+        "content": "$1",
+        "example": "AutoBrowser"
+      }
+    }
+  },
+  "reviewDescription": {
+    "message": "Hallo, ich bin $NAME$. Ich habe $APP_NAME$ erstellt, um Menschen zu helfen, Zeit zu sparen und ihre Aufgaben zu automatisieren. Wenn Sie es gerne verwenden, würde ich mich über eine 5-Sterne-Bewertung freuen, um anderen zu helfen, $APP_NAME$ zu entdecken. Vielen Dank!",
+    "description": "Bitten Sie den Benutzer, eine Bewertung für die Anwendung abzugeben",
+    "placeholders": {
+      "name": {
+        "content": "Namu"
+      },
+      "app_name": {
+        "content": "$1",
+        "example": "AutoBrowser"
+      }
+    }
+  },
+  "addReview": {
+    "message": "Eine Bewertung hinzufügen",
+    "description": "Beschriftung für die Schaltfläche, um eine Bewertung für die Anwendung hinzuzufügen"
+  },
+  "dismiss": {
+    "message": "Schließen",
+    "description": "Aktion zum Schließen des Hinweises"
+  },
+  "signIn": {
+    "message": "Anmelden",
+    "description": "Beschriftung für die Schaltfläche zur Anmeldung"
+  },
+  "connect": {
+    "message": "Verbinden",
+    "description": "Beschriftung für Schaltfläche zum Verbinden"
+  },
+  "disconnect": {
+    "message": "Trennen",
+    "description": "Beschriftung für Schaltfläche zum Trennen"
+  },
+  "focusConnectedTab": {
+    "message": "Fokus auf verbundenen Tab",
+    "description": "Beschriftung für die Schaltfläche, um den verbundenen Tab zu fokussieren"
+  },
+  "connectFromThisTab": {
+    "message": "Verbindung von diesem Tab herstellen",
+    "description": "Beschriftung für die Schaltfläche, um von der aktuellen Registerkarte zu verbinden"
+  },
+  "invalidTab": {
+    "message": "Diese Seite kann nicht automatisiert werden. Bitte versuchen Sie es mit einer anderen Seite.",
+    "description": "Fehlermeldung für ungültigen Tab"
+  },
+  "error": {
+    "message": "Fehler",
+    "description": "Bezeichnung zur Anzeige eines Fehlers"
+  },
+  "appUpdated": {
+    "message": "App aktualisiert",
+    "description": "Beschriftung für den Hinweis auf die Aktualisierung der App"
+  },
+  "seeWhatIsNew": {
+    "message": "Sieh dir an, was neu ist",
+    "description": "Beschriftung für die Beschreibung, um zu sehen, was neu ist"
+  },
+  "view": {
+    "message": "Ansehen",
+    "description": "Bezeichnung für die Schaltfläche zur Anzeige des Updates"
+  }
+}

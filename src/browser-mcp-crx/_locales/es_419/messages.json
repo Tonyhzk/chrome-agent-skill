@@ -1,0 +1,73 @@
+{
+  "reviewTitle": {
+    "message": "Gracias por usar $APP_NAME$",
+    "description": "Agradece al usuario por usar la aplicación",
+    "placeholders": {
+      "app_name": {
+        "content": "$1",
+        "example": "AutoBrowser"
+      }
+    }
+  },
+  "reviewDescription": {
+    "message": "Hola, soy $NAME$. Creé $APP_NAME$ para ayudar a las personas a ahorrar tiempo y automatizar sus tareas. Si te gusta usarla, agradecería una calificación de 5 estrellas para ayudar a otros a descubrir $APP_NAME$. ¡Muchas gracias!",
+    "description": "Pide al usuario que deje una reseña para la aplicación",
+    "placeholders": {
+      "name": {
+        "content": "Namu"
+      },
+      "app_name": {
+        "content": "$1",
+        "example": "AutoBrowser"
+      }
+    }
+  },
+  "addReview": {
+    "message": "Agregar una reseña",
+    "description": "Etiqueta para el botón para añadir una reseña de la aplicación"
+  },
+  "dismiss": {
+    "message": "Descartar",
+    "description": "Acción para descartar la alerta"
+  },
+  "signIn": {
+    "message": "Iniciar sesión",
+    "description": "Etiqueta para el botón para iniciar sesión"
+  },
+  "connect": {
+    "message": "Conectar",
+    "description": "Etiqueta para el botón de conectar"
+  },
+  "disconnect": {
+    "message": "Desconectar",
+    "description": "Etiqueta para el botón de desconectar"
+  },
+  "focusConnectedTab": {
+    "message": "Enfocar la pestaña conectada",
+    "description": "Etiqueta para el botón para enfocar la pestaña conectada"
+  },
+  "connectFromThisTab": {
+    "message": "Conectar desde esta pestaña",
+    "description": "Etiqueta para el botón para conectar desde la pestaña actual"
+  },
+  "invalidTab": {
+    "message": "Esta página no se puede automatizar. Por favor, intenta con una página diferente.",
+    "description": "Mensaje de error para pestaña no válida"
+  },
+  "error": {
+    "message": "Error",
+    "description": "Etiqueta para mostrar un error"
+  },
+  "appUpdated": {
+    "message": "Aplicación actualizada",
+    "description": "Etiqueta para la alerta de aplicación actualizada"
+  },
+  "seeWhatIsNew": {
+    "message": "Ver qué hay de nuevo",
+    "description": "Etiqueta para la descripción para ver qué hay de nuevo"
+  },
+  "view": {
+    "message": "Ver",
+    "description": "Etiqueta para el botón de ver la actualización"
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "reviewTitle": {
+    "message": "Gràcies per utilitzar $APP_NAME$",
+    "description": "Agraïment a l'usuari per utilitzar l'aplicació",
+    "placeholders": {
+      "app_name": {
+        "content": "$1",
+        "example": "AutoBrowser"
+      }
+    }
+  },
+  "reviewDescription": {
+    "message": "Hola, soc $NAME$. Vaig crear $APP_NAME$ per ajudar a la gent a estalviar temps i automatitzar les seves tasques. Si gaudeixes utilitzant-la, agrairia una valoració de 5 estrelles per ajudar altres a descobrir $APP_NAME$. Moltes gràcies!",
+    "description": "Demanar a l'usuari que deixi una ressenya per a l'aplicació",
+    "placeholders": {
+      "name": {
+        "content": "Namu"
+      },
+      "app_name": {
+        "content": "$1",
+        "example": "AutoBrowser"
+      }
+    }
+  },
+  "addReview": {
+    "message": "Afegeix una ressenya",
+    "description": "Etiqueta per al botó per afegir una ressenya per a l'aplicació"
+  },
+  "dismiss": {
+    "message": "Descartar",
+    "description": "Acció per descartar l'alerta"
+  },
+  "signIn": {
+    "message": "Inicia sessió",
+    "description": "Etiqueta per al botó d'iniciar sessió"
+  },
+  "connect": {
+    "message": "Connecta",
+    "description": "Etiqueta per al botó de connectar"
+  },
+  "disconnect": {
+    "message": "Desconnectar",
+    "description": "Etiqueta per al botó per desconnectar"
+  },
+  "focusConnectedTab": {
+    "message": "Centra la pestanya connectada",
+    "description": "Etiqueta per al botó per centrar la pestanya connectada"
+  },
+  "connectFromThisTab": {
+    "message": "Connecta des d'aquesta pestanya",
+    "description": "Etiqueta per al botó per connectar des de la pestanya actual"
+  },
+  "invalidTab": {
+    "message": "Aquesta pàgina no es pot automatitzar. Si us plau, prova amb una altra pàgina.",
+    "description": "Missatge d'error per a pestanya no vàlida"
+  },
+  "error": {
+    "message": "Error",
+    "description": "Etiqueta per mostrar un error"
+  },
+  "appUpdated": {
+    "message": "Aplicació actualitzada",
+    "description": "Etiqueta per a l'alerta d'aplicació actualitzada"
+  },
+  "seeWhatIsNew": {
+    "message": "Descobreix les novetats",
+    "description": "Etiqueta per a la descripció per veure les novetats"
+  },
+  "view": {
+    "message": "Veure",
+    "description": "Etiqueta per al botó per veure l'actualització"
+  }
+}

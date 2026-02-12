@@ -1,0 +1,69 @@
+{
+  "error": {
+    "message": "Error",
+    "description": "Label for displaying an error"
+  },
+  "appUpdated": {
+    "message": "App updated",
+    "description": "Label for the app updated alert"
+  },
+  "seeWhatIsNew": {
+    "message": "See what's new",
+    "description": "Label for the description to see what's new"
+  },
+  "view": {
+    "message": "View",
+    "description": "Label for the button to view the update"
+  },
+  "reviewTitle": {
+    "message": "Thanks for using $APP_NAME$",
+    "description": "Thank the user for using the application",
+    "placeholders": {
+      "app_name": {
+        "content": "$1",
+        "example": "Extension Stack"
+      }
+    }
+  },
+  "reviewDescription": {
+    "message": "Hi, I'm $NAME$. I created $APP_NAME$ to help people save time and automate their tasks. If you enjoy using it, I'd appreciate a 5-star rating to help others discover $APP_NAME$. Thanks so much!",
+    "description": "Ask the user to leave a review for the application",
+    "placeholders": {
+      "name": {
+        "content": "Namu"
+      },
+      "app_name": {
+        "content": "$1",
+        "example": "Browser MCP"
+      }
+    }
+  },
+  "addReview": {
+    "message": "Add a Review",
+    "description": "Label for the button to add a review for the application"
+  },
+  "signIn": {
+    "message": "Sign in",
+    "description": "Label for the button to sign in"
+  },
+  "connect": {
+    "message": "Connect",
+    "description": "Label for button to connect"
+  },
+  "disconnect": {
+    "message": "Disconnect",
+    "description": "Label for button to disconnect"
+  },
+  "focusConnectedTab": {
+    "message": "Focus connected tab",
+    "description": "Label for button to focus the connected tab"
+  },
+  "connectFromThisTab": {
+    "message": "Connect from this tab",
+    "description": "Label for button to connect from the current tab"
+  },
+  "invalidTab": {
+    "message": "This page cannot be automated. Please try a different page.",
+    "description": "Error message for invalid tab"
+  }
+}
