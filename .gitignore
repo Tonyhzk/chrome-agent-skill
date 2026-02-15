@@ -3,6 +3,7 @@
 .temp/
 0_Backup/
 0_Release/
+setup_claude_dir.py
 
 # ==================== Reference ====================
 0_Reference/
