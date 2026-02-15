@@ -6,13 +6,13 @@ All notable changes to this project will be documented in this file.
 
 ---
 
-## [Unreleased]
+## [1.5.0] - 2026-02-15
 
 ### Added
 - `xpath_query` action: execute XPath queries on page HTML, return matching elements' text, inner/outer HTML, or attribute values (requires `lxml`)
 - `snapshot` action: new `inline` parameter to return snapshot content directly in response without saving to file
 - `snapshot` / `xpath_query`: new `max_length` parameter to control content truncation, defaults read from config.json
-- `xpath_query`: new `save_path` parameter to save full query results to file
+- `xpath_query`: new `save_path` parameter to save full query results to file (suppresses content output when saving)
 - Support `snapshot_max_length` and `xpath_max_display_length` defaults via `config.json`
 
 ### Changed

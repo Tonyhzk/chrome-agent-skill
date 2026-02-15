@@ -6,13 +6,13 @@
 
 ---
 
-## [Unreleased]
+## [1.5.0] - 2026-02-15
 
 ### 新增
 - `xpath_query` 操作：对页面 HTML 执行 XPath 查询，返回匹配元素的文本、内部/外部 HTML 或属性值（依赖 `lxml`）
 - `snapshot` 操作新增 `inline` 参数：直接在响应中返回快照内容，无需保存到文件
 - `snapshot` / `xpath_query` 新增 `max_length` 参数：控制返回内容截断长度，默认从 config.json 读取
-- `xpath_query` 新增 `save_path` 参数：将完整查询结果保存到文件
+- `xpath_query` 新增 `save_path` 参数：将完整查询结果保存到文件（输出到文件时不再返回内容）
 - 支持通过 `config.json` 配置 `snapshot_max_length` 和 `xpath_max_display_length` 默认值
 
 ### 变更
