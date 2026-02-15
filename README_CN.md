@@ -122,7 +122,7 @@ python3 src/browser-chrome-agent/scripts/server.py --port 9009
 | `get_text` | `{}` 或 `{"max_length": 5000}` | 获取页面纯文字内容 |
 | `wait` | `{"time": 2}` | 等待（秒） |
 | `screenshot` | `{}` 或 `{"savePath": "路径"}` | 截图 |
-| `snapshot` | `{}` | 获取页面 ARIA 快照 |
+| `snapshot` | `{}` 或 `{"snapshot_file": "路径"}` | 获取页面 ARIA 快照（传 snapshot_file 保存到文件） |
 | `get_html` | `{"savePath": "路径"}` | 获取页面完整 HTML 源码并保存到文件 |
 | `get_console_logs` | `{}` | 获取控制台日志 |
 | `list_tabs` | `{}` | 列出所有标签页 |
@@ -134,7 +134,7 @@ python3 src/browser-chrome-agent/scripts/server.py --port 9009
 
 ### 元素引用
 
-交互操作（`click`、`hover`、`type` 等）使用 ARIA 快照中的 `ref` 值定位元素。先执行 `snapshot` 获取页面结构，再使用快照中的 `[ref=xxx]` 值操作目标元素。
+交互操作（`click`、`hover`、`type` 等）使用 ARIA 快照中的 `ref` 值定位元素。优先使用 `find_element` 或 `find_and_locate` 通过关键字搜索元素并获取 ref 或坐标，仅在需要查看完整页面结构时使用 `snapshot`。
 
 ---
 

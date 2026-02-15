@@ -122,7 +122,7 @@ Send JSON commands via stdin (one per line):
 | `get_text` | `{}` or `{"max_length": 5000}` | Get page plain text content |
 | `wait` | `{"time": 2}` | Wait (seconds) |
 | `screenshot` | `{}` or `{"savePath": "path"}` | Capture screenshot |
-| `snapshot` | `{}` | Get ARIA page snapshot |
+| `snapshot` | `{}` or `{"snapshot_file": "path"}` | Get ARIA page snapshot (save to file with snapshot_file) |
 | `get_html` | `{"savePath": "path"}` | Get full page HTML source and save to file |
 | `get_console_logs` | `{}` | Get console logs |
 | `list_tabs` | `{}` | List all tabs |
@@ -134,7 +134,7 @@ Send JSON commands via stdin (one per line):
 
 ### Element References
 
-Interactive actions (`click`, `hover`, `type`, etc.) use `ref` values from the ARIA snapshot. Run `snapshot` first to get the page structure, then use the `[ref=xxx]` values to target elements.
+Interactive actions (`click`, `hover`, `type`, etc.) use `ref` values from the ARIA snapshot to target elements. Use `find_element` or `find_and_locate` to search elements by keyword and get their refs or coordinates directly. Use `snapshot` only when you need to inspect the full page structure.
 
 ---
 
