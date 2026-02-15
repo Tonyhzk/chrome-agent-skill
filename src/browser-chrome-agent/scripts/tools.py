@@ -600,14 +600,22 @@ async def xpath_query(context, params: dict) -> dict:
         except Exception as e:
             return {"success": False, "error": f"保存文件失败: {e}"}
 
+    # 保存到文件时只返回摘要，不输出内容
+    if save_path:
+        return {
+            "success": True,
+            "data": {
+                "type": "text",
+                "text": f"匹配 {total} 个结果，已保存到: {save_path}",
+                "count": total,
+            }
+        }
+
     # 构建显示文本（截断）
     lines = [f"匹配 {total} 个结果（显示 {shown} 个）:"]
     for i, item in enumerate(items):
         display = item if len(item) <= max_length else item[:max_length] + "..."
         lines.append(f"  [{i+1}] {display}")
-
-    if save_path:
-        lines.append(f"\n完整结果已保存到: {save_path}")
 
     return {
         "success": True,
