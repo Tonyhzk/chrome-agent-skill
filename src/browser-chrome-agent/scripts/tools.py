@@ -479,6 +479,110 @@ async def close_tab(context, params: dict) -> dict:
     return {"success": True, "data": {"type": "text", "text": msg}}
 
 
+async def xpath_query(context, params: dict) -> dict:
+    """通过 XPath 查询页面元素，返回匹配元素的文本或 HTML
+
+    参数:
+        xpath: XPath 表达式（必填）
+        output: 输出类型（默认 "text"）
+            - "text": 元素的纯文本内容
+            - "inner_html": 元素的内部 HTML
+            - "outer_html": 元素的完整 HTML（含自身标签）
+            - "attr": 提取属性值（需配合 attr_name）
+        attr_name: 当 output="attr" 时，指定要提取的属性名
+        max_results: 最大返回数量（默认 20）
+
+    示例 XPath:
+        //h1                          → 所有 h1 标题
+        //input[@type='text']         → 所有文本输入框
+        //a[contains(@href,'github')] → 包含 github 的链接
+        //div[@class='content']//p    → content 区域内的段落
+        //meta[@name='description']/@content → meta 描述内容
+    """
+    from lxml import html as lxml_html
+    from lxml.etree import tostring as etree_tostring
+
+    xpath_expr = params.get("xpath", "")
+    if not xpath_expr:
+        return {"success": False, "error": "缺少 xpath 参数"}
+
+    output_type = params.get("output", "text")
+    attr_name = params.get("attr_name", "")
+    max_results = params.get("max_results", 20)
+
+    if output_type == "attr" and not attr_name:
+        return {"success": False, "error": "output='attr' 时需要提供 attr_name 参数"}
+
+    # 获取页面 HTML
+    try:
+        page_html = await context.send_message("getPageHtml", {})
+    except Exception as e:
+        return {"success": False, "error": f"获取页面 HTML 失败: {e}"}
+
+    # 解析 HTML
+    try:
+        tree = lxml_html.fromstring(page_html)
+    except Exception as e:
+        return {"success": False, "error": f"解析 HTML 失败: {e}"}
+
+    # 执行 XPath
+    try:
+        results = tree.xpath(xpath_expr)
+    except Exception as e:
+        return {"success": False, "error": f"XPath 表达式错误: {e}"}
+
+    if not results:
+        return {"success": True, "data": {"type": "text", "text": f"XPath \"{xpath_expr}\" 未匹配到任何元素", "count": 0}}
+
+    # 格式化结果
+    items = []
+    for i, node in enumerate(results[:max_results]):
+        if isinstance(node, str):
+            # XPath 返回字符串（如 text() 或 @attr）
+            items.append(node.strip())
+        elif hasattr(node, 'tag'):
+            # 元素节点
+            if output_type == "text":
+                text = node.text_content().strip()
+                items.append(text)
+            elif output_type == "inner_html":
+                inner = (node.text or "") + "".join(
+                    etree_tostring(child, encoding="unicode", method="html")
+                    for child in node
+                )
+                items.append(inner.strip())
+            elif output_type == "outer_html":
+                items.append(etree_tostring(node, encoding="unicode", method="html").strip())
+            elif output_type == "attr":
+                val = node.get(attr_name, "")
+                items.append(val)
+            else:
+                items.append(node.text_content().strip())
+        else:
+            items.append(str(node).strip())
+
+    # 过滤空结果
+    items = [item for item in items if item]
+    total = len(results)
+    shown = len(items)
+
+    lines = [f"匹配 {total} 个结果（显示 {shown} 个）:"]
+    for i, item in enumerate(items):
+        # 截断过长的单条结果
+        display = item if len(item) <= 500 else item[:500] + "..."
+        lines.append(f"  [{i+1}] {display}")
+
+    return {
+        "success": True,
+        "data": {
+            "type": "text",
+            "text": "\n".join(lines),
+            "count": total,
+            "items": items
+        }
+    }
+
+
 # === 工具注册表 ===
 
 TOOLS = {
@@ -504,4 +608,5 @@ TOOLS = {
     "new_tab": new_tab,
     "switch_tab": switch_tab,
     "close_tab": close_tab,
+    "xpath_query": xpath_query,
 }

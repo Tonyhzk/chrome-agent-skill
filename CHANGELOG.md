@@ -6,6 +6,13 @@ All notable changes to this project will be documented in this file.
 
 ---
 
+## [Unreleased]
+
+### Added
+- `xpath_query` action: execute XPath queries on page HTML, return matching elements' text, inner/outer HTML, or attribute values (requires `lxml`)
+
+---
+
 ## [1.4.0] - 2026-02-15
 
 ### Added

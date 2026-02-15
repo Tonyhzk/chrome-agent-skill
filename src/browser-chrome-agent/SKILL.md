@@ -72,6 +72,7 @@ python3 %当前SKILL文件父目录%/scripts/server.py --port 9009
 | `screenshot` | `{}` 或 `{"savePath": "全路径"}` | 截图，传 savePath（必须是全路径）保存到文件，不传返回 base64 |
 | `snapshot` | `{}` | 获取页面 ARIA 快照 |
 | `get_html` | `{"savePath": "全路径"}` | 获取页面完整 HTML 源码并保存到文件（savePath 必须是全路径，仅修改版插件可用） |
+| `xpath_query` | `{"xpath": "//h1"}` | 对页面执行 XPath 查询，返回匹配元素的文本或 HTML |
 | `get_console_logs` | `{}` | 获取控制台日志 |
 | `list_tabs` | `{}` | 列出所有标签页（显示 id、标题、URL，`*` 标记活动页） |
 | `new_tab` | `{"url": "..."}` | 打开新标签页（url 可选，默认 about:blank） |

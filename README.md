@@ -124,6 +124,7 @@ Send JSON commands via stdin (one per line):
 | `screenshot` | `{}` or `{"savePath": "path"}` | Capture screenshot |
 | `snapshot` | `{}` or `{"snapshot_file": "path"}` | Get ARIA page snapshot (save to file with snapshot_file) |
 | `get_html` | `{"savePath": "path"}` | Get full page HTML source and save to file |
+| `xpath_query` | `{"xpath": "//h1"}` | Execute XPath query on page, return matching elements' text or HTML |
 | `get_console_logs` | `{}` | Get console logs |
 | `list_tabs` | `{}` | List all tabs |
 | `new_tab` | `{"url": "..."}` | Open new tab (url optional) |
