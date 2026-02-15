@@ -1,6 +1,6 @@
 <div align="center">
 
-![Browser Chrome Agent](assets/banner.png)
+![Browser Chrome Agent](assets/banner.svg)
 
 通过 WebSocket 与 Chrome 扩展通信的 Claude Code 技能，实现网页导航、交互、截图和页面快照等浏览器自动化操作。
 

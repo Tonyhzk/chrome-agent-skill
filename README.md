@@ -1,6 +1,6 @@
 <div align="center">
 
-![Browser Chrome Agent](assets/banner.png)
+![Browser Chrome Agent](assets/banner.svg)
 
 A Claude Code Skill for browser automation via WebSocket communication with the Chrome extension, enabling web navigation, interaction, screenshots, and page snapshots.
 
