@@ -6,7 +6,7 @@ All notable changes to this project will be documented in this file.
 
 ---
 
-## [Unreleased]
+## [1.4.0] - 2026-02-15
 
 ### Added
 - `snapshot_file` parameter for all snapshot-returning actions — snapshots are now only fetched and saved to file when explicitly requested, reducing context usage
