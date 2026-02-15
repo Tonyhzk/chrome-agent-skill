@@ -6,6 +6,23 @@ All notable changes to this project will be documented in this file.
 
 ---
 
+## [Unreleased]
+
+### Added
+- `snapshot_file` parameter for all snapshot-returning actions — snapshots are now only fetched and saved to file when explicitly requested, reducing context usage
+- `switch_tab` now returns page info (URL + Title) after switching, confirming debugger attached correctly
+- `close_tab` now reports which tab was auto-switched to after closing
+- `list_tabs` now refreshes extension's internal active tab cache, fixing stale tabId issues after navigation
+- `find_element` / `find_and_locate` promoted as primary element location method in SKILL.md
+
+### Fixed
+- Fixed multi-tab switching bug: keyboard/mouse events were sent to wrong tab after `switch_tab` due to JavaScript object reference issue in debugger tabId propagation
+- Fixed `close_tab` not updating debugger attachment to new active tab when closing current tab
+
+### Changed
+- Default behavior: operations no longer output ARIA snapshots — only URL + Title returned by default, use `snapshot_file` to save snapshot to file when needed
+- SKILL.md updated to enforce "find first, snapshot only for debug" workflow
+
 ## [1.2.0] - 2025-02-12
 
 ### Added

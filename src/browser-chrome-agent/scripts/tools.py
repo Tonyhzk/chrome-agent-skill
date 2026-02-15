@@ -427,8 +427,16 @@ async def get_html(context, params: dict) -> dict:
 # === 标签页管理工具 ===
 
 async def list_tabs(context, params: dict) -> dict:
-    """列出所有打开的标签页"""
+    """列出所有打开的标签页，并刷新扩展内部的活动标签页缓存"""
     tabs = await context.send_message("browser_list_tabs", {})
+    # 找到当前活动标签页，用 switch_tab 刷新扩展内部缓存的 tabId
+    # 解决导航后扩展缓存的旧 tabId 导致 "No tab with given id" 的问题
+    active_tab = next((t for t in tabs if t.get("active")), None)
+    if active_tab:
+        try:
+            await context.send_message("browser_switch_tab", {"tabId": active_tab["id"]})
+        except Exception:
+            pass  # 刷新失败不影响 list_tabs 结果
     lines = []
     for tab in tabs:
         marker = " *" if tab.get("active") else ""
@@ -449,7 +457,13 @@ async def switch_tab(context, params: dict) -> dict:
     if not tab_id:
         return {"success": False, "error": "缺少 tabId 参数（先用 list_tabs 获取）"}
     result = await context.send_message("browser_switch_tab", {"tabId": tab_id})
-    return {"success": True, "data": {"type": "text", "text": f"已切换到标签页: id={tab_id}, title={result.get('title', '')}, url={result.get('url', '')}"}}
+    # 切换后获取快照，确认 debugger 已正确 attach 到新标签页
+    snapshot = await capture_aria_snapshot(
+        context,
+        status=f"已切换到标签页: id={tab_id}, title={result.get('title', '')}, url={result.get('url', '')}",
+        save_path=params.get("snapshot_file", ""),
+    )
+    return {"success": True, "data": snapshot}
 
 
 async def close_tab(context, params: dict) -> dict:
@@ -458,7 +472,11 @@ async def close_tab(context, params: dict) -> dict:
     if not tab_id:
         return {"success": False, "error": "缺少 tabId 参数（先用 list_tabs 获取）"}
     result = await context.send_message("browser_close_tab", {"tabId": tab_id})
-    return {"success": True, "data": {"type": "text", "text": f"已关闭标签页 {result.get('closed', tab_id)}"}}
+    switched_to = result.get("switchedTo")
+    msg = f"已关闭标签页 {result.get('closed', tab_id)}"
+    if switched_to:
+        msg += f"，已自动切换到标签页 {switched_to}"
+    return {"success": True, "data": {"type": "text", "text": msg}}
 
 
 # === 工具注册表 ===

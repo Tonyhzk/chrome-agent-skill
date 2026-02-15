@@ -1,6 +1,6 @@
 ---
 name: browser-chrome-agent
-version: 1.2.0
+version: 1.4.0
 description: 浏览器自动化控制技能。通过 WebSocket 连接 Chrome 扩展，实现网页导航、点击、输入、截图、获取页面快照、多标签页管理等操作。当用户需要操作浏览器、自动化网页交互、截取网页截图、获取页面内容、切换标签页时使用。关键词：浏览器、Chrome、网页操作、自动化、截图、点击、导航、输入、页面快照、标签页、多标签。
 ---
 
@@ -11,6 +11,7 @@ description: 浏览器自动化控制技能。通过 WebSocket 连接 Chrome 扩
 ## 前置条件
 
 1. Chrome 浏览器已安装 Browser MCP 扩展
+   - **本技能默认分发修改版插件**：`assets/` 目录内仅包含修改版插件，支持所有文档中列出的功能（包括 `get_html`、`snapshot_file` 等增强功能）
    - 扩展安装包位于 `%当前SKILL文件父目录%/assets/` 目录
    - 安装方式：Chrome 地址栏输入 `chrome://extensions/`，开启「开发者模式」，解压 `Browser_MCP_1_3_4_modified.zip` 后通过「加载已解压的扩展程序」安装
 2. 扩展已点击 Connect 建立连接
@@ -68,9 +69,9 @@ python3 %当前SKILL文件父目录%/scripts/server.py --port 9009
 | `find_and_locate` | `{"keyword": "搜索", "index": 0}` | 搜索元素并立即获取坐标（解决 ref 过期问题） |
 | `get_text` | `{}` 或 `{"max_length": 5000}` | 获取页面纯文字内容 |
 | `wait` | `{"time": 2}` | 等待（秒） |
-| `screenshot` | `{}` 或 `{"savePath": "路径"}` | 截图，传 savePath 保存到文件，不传返回 base64 |
+| `screenshot` | `{}` 或 `{"savePath": "全路径"}` | 截图，传 savePath（必须是全路径）保存到文件，不传返回 base64 |
 | `snapshot` | `{}` | 获取页面 ARIA 快照 |
-| `get_html` | `{"savePath": "路径"}` | 获取页面完整 HTML 源码并保存到文件（仅修改版插件可用） |
+| `get_html` | `{"savePath": "全路径"}` | 获取页面完整 HTML 源码并保存到文件（savePath 必须是全路径，仅修改版插件可用） |
 | `get_console_logs` | `{}` | 获取控制台日志 |
 | `list_tabs` | `{}` | 列出所有标签页（显示 id、标题、URL，`*` 标记活动页） |
 | `new_tab` | `{"url": "..."}` | 打开新标签页（url 可选，默认 about:blank） |
@@ -92,29 +93,47 @@ python3 %当前SKILL文件父目录%/scripts/server.py --port 9009
 
 ## 操作规范
 
-### 使用 snapshot_file 减少上下文占用（强制）
+### snapshot_file 参数（按需使用）
 
-所有会返回快照的操作（navigate/click/type/hover/select_option/drag/snapshot）都支持 `snapshot_file` 参数。指定后快照写入文件，stdout 只返回简短的操作结果（URL + Title），不再输出完整快照。
+所有会返回快照的操作（navigate/click/type/hover/select_option/drag/snapshot/switch_tab）都支持 `snapshot_file` 参数。
 
-**必须始终使用 `snapshot_file` 参数**，将快照保存到固定文件（如 `.temp/browser/snapshot.txt`），需要查看快照时用 Read 工具读取该文件。
+**默认不传 `snapshot_file`**，操作只返回 URL + Title，不获取也不输出快照。仅在需要查看页面结构时传入 `snapshot_file`，快照写入文件，stdout 仍只返回 URL + Title + 文件路径。**快照内容禁止直接输出到上下文**。
+
+使用时将快照保存到固定文件（**必须使用全路径**，如 `/Users/xxx/project/.temp/browser/snapshot.txt`），需要查看时用 Read 工具读取。缓存目录存在时无需重复创建。
 
 ```json
-{"action": "click", "params": {"ref": "s1e5", "snapshot_file": ".temp/browser/snapshot.txt"}}
-{"action": "navigate", "params": {"url": "https://example.com", "snapshot_file": ".temp/browser/snapshot.txt"}}
-{"action": "snapshot", "params": {"snapshot_file": ".temp/browser/snapshot.txt"}}
+{"action": "click", "params": {"ref": "s1e5", "snapshot_file": "/Users/xxx/project/.temp/browser/snapshot.txt"}}
 ```
 
-不带 `snapshot_file` 时行为不变（完整快照输出到 stdout），仅用于调试。
+### 查找指令优先，禁止先 snapshot
 
-### snapshot 优先，减少 screenshot
+**核心原则：直接使用查找指令定位元素，禁止先获取 snapshot 再手动查找**
 
-- 优先使用 `snapshot` 获取页面结构和元素 ref，这是定位和操作元素的主要手段
-- 交互操作（click/type 等）的返回结果已包含最新快照，无需额外调用 snapshot
+- **优先使用 `find_element` 或 `find_and_locate`**：通过关键词直接搜索元素，返回匹配的 ref 列表或坐标
+  - `find_element`：返回所有匹配元素的 ref 列表，适合需要选择特定元素的场景
+  - `find_and_locate`：搜索并立即返回指定索引元素的坐标，一步到位，避免 ref 过期
+- **禁止先 snapshot 再手动查找**：这会浪费时间和上下文空间，且容易遇到 ref 过期问题
+- **snapshot 仅用于调试**：当查找指令无法定位元素，或需要了解页面整体结构时才使用
+- **交互操作默认只返回 URL+Title**：click/type 等操作不输出快照，需要查看页面结构时传 `snapshot_file`
 - `screenshot` 仅在以下场景使用：
   - 需要视觉确认（验证排版效果、图片显示、样式问题）
   - 用户明确要求截图
-  - 调试时快照信息不足以判断页面状态
-- 禁止在每次操作后都截图，这会浪费时间和上下文空间
+  - 调试时查找指令和快照信息都不足以判断页面状态
+
+**正确流程示例**：
+```json
+// ✅ 正确：直接使用查找指令
+{"action": "find_element", "params": {"keyword": "登录按钮"}}
+// 返回 ["s1e5", "s1e12"]，选择合适的 ref 进行操作
+
+// ✅ 正确：一步到位获取坐标
+{"action": "find_and_locate", "params": {"keyword": "搜索框", "index": 0}}
+// 直接返回坐标，避免 ref 过期
+
+// ❌ 错误：先 snapshot 再手动查找
+{"action": "snapshot", "params": {"snapshot_file": "/path/to/snapshot.txt"}}
+// 然后读取文件手动查找 ref - 这是禁止的！
+```
 
 ### ref 过期处理
 
@@ -129,16 +148,20 @@ python3 %当前SKILL文件父目录%/scripts/server.py --port 9009
 
 ### 快照文件读取规范
 
-- **禁止整个读取快照文件**，快照通常有数百到上千行
-- 查找元素 ref 时，使用 Grep 搜索关键词（如按钮文字、输入框名称）
+- **优先使用查找指令**：需要定位元素时，直接使用 `find_element` 或 `find_and_locate`，不要读取快照文件手动查找
+- **快照文件仅用于调试**：当查找指令无法定位元素，需要了解页面结构时才读取快照文件
+- **禁止整个读取快照文件**：快照通常有数百到上千行，会严重占用上下文
+- 需要查看快照时，使用 Grep 搜索关键词（如按钮文字、输入框名称）
 - 需要上下文时，用 Read 的 `offset` + `limit` 参数读取指定行范围
 
 ### 多标签页操作规范
 
 - **开始操作前先确认当前标签页**：使用 `list_tabs` 查看所有标签页，确认要操作的是哪个标签页
 - 活动标签页会用 `*` 标记，所有操作都作用于当前活动标签页
-- 如需操作其他标签页，先用 `switch_tab` 切换
-- 多任务场景建议用 `new_tab` 在新标签页操作，避免影响用户正在浏览的页面
+- `new_tab` 创建后会自动切换到新标签页（包括 debugger attach），可直接操作
+- `close_tab` 关闭当前活动标签页后会自动切换到下一个活动标签页
+- 如需操作其他已有标签页，用 `switch_tab` 切换（切换后会返回目标页面快照）
+- `switch_tab` 会完成 debugger 的 detach/attach，确保键盘鼠标事件发送到正确的标签页
 
 ### type 输入规范
 

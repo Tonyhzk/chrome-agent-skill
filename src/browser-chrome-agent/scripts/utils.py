@@ -55,34 +55,33 @@ def kill_process_on_port(port: int):
 
 
 async def capture_aria_snapshot(context, status: str = "", save_path: str = "") -> dict:
-    """捕获页面 ARIA 快照，返回结构化结果
+    """捕获页面信息，可选保存 ARIA 快照到文件
 
     Args:
         context: 浏览器上下文
         status: 操作状态描述（如 "已点击 ref=s1e5"）
-        save_path: 快照保存路径。指定后快照写入文件，stdout 只返回简短结果
+        save_path: 快照保存路径。不传则不获取快照，只返回 URL+Title；
+                   传入路径则获取快照并写入文件
     """
     url = await context.send_message("getUrl")
     title = await context.send_message("getTitle")
-    snapshot = await context.send_message("browser_snapshot", {})
-
     status_line = f"{status}\n" if status else ""
 
-    full_text = (
-        f"{status_line}"
-        f"- Page URL: {url}\n"
-        f"- Page Title: {title}\n"
-        f"- Page Snapshot\n"
-        f"```yaml\n"
-        f"{snapshot}\n"
-        f"```"
-    )
-
     if save_path:
+        snapshot = await context.send_message("browser_snapshot", {})
+        full_text = (
+            f"{status_line}"
+            f"- Page URL: {url}\n"
+            f"- Page Title: {title}\n"
+            f"- Page Snapshot\n"
+            f"```yaml\n"
+            f"{snapshot}\n"
+            f"```"
+        )
         path = Path(save_path)
-        path.parent.mkdir(parents=True, exist_ok=True)
+        if not path.parent.exists():
+            path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text(full_text, encoding="utf-8")
-        short_text = f"{status_line}- Page URL: {url}\n- Page Title: {title}\n- Snapshot saved to: {save_path}"
-        return {"type": "text", "text": short_text}
+        return {"type": "text", "text": f"{status_line}- Page URL: {url}\n- Page Title: {title}\n- Snapshot saved to: {save_path}"}
 
-    return {"type": "text", "text": full_text}
+    return {"type": "text", "text": f"{status_line}- Page URL: {url}\n- Page Title: {title}"}

@@ -6,6 +6,23 @@
 
 ---
 
+## [Unreleased]
+
+### 新增
+- 所有返回快照的操作支持 `snapshot_file` 参数 — 仅在明确请求时才获取快照并保存到文件，减少上下文占用
+- `switch_tab` 切换后返回页面信息（URL + Title），确认 debugger 已正确 attach
+- `close_tab` 关闭后报告自动切换到的标签页
+- `list_tabs` 自动刷新扩展内部活动标签页缓存，修复导航后 tabId 过期问题
+- `find_element` / `find_and_locate` 在 SKILL.md 中提升为首选元素定位方式
+
+### 修复
+- 修复多标签页切换 bug：`switch_tab` 后键盘/鼠标事件发送到错误标签页，根因是 JavaScript 对象引用问题导致 debugger tabId 未正确传播
+- 修复 `close_tab` 关闭当前标签页后未将 debugger 附加到新活动标签页的问题
+
+### 变更
+- 默认行为变更：操作不再输出 ARIA 快照，默认只返回 URL + Title，需要快照时使用 `snapshot_file` 保存到文件
+- SKILL.md 更新为"查找指令优先，snapshot 仅用于调试"的工作流
+
 ## [1.2.0] - 2025-02-12
 
 ### 新增

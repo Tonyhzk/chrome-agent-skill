@@ -47621,6 +47621,10 @@ License: MIT
     }
     set tabId(e) {
       this.computer.tabId = e;
+      if (this.computer.input) {
+        this.computer.input.tabId = e;
+        this.computer.input.debuggee.tabId = e;
+      }
     }
   }
   function Mq(t, e) {
@@ -47664,6 +47668,13 @@ License: MIT
         n("browser_new_tab", async (a) => {
           const url = a.payload && a.payload.url ? a.payload.url : "about:blank";
           const tab = await chrome.tabs.create({ url, active: true });
+          const oldTabId = e.tabId;
+          e.tabId = -1;
+          if (oldTabId && oldTabId !== -1 && (await xC(oldTabId))) {
+            await AH(oldTabId);
+          }
+          e.tabId = tab.id;
+          await PC(tab.id);
           pd.setValue(tab.id);
           return { id: tab.id, title: tab.title, url: tab.url };
         }),
@@ -47675,6 +47686,13 @@ License: MIT
           await chrome.tabs.update(tabId, { active: true });
           const tab = await chrome.tabs.get(tabId);
           await chrome.windows.update(tab.windowId, { focused: true });
+          const oldTabId = e.tabId;
+          e.tabId = -1;
+          if (oldTabId && oldTabId !== -1 && oldTabId !== tabId && (await xC(oldTabId))) {
+            await AH(oldTabId);
+          }
+          e.tabId = tabId;
+          await PC(tabId);
           pd.setValue(tabId);
           return { id: tab.id, title: tab.title, url: tab.url };
         }),
@@ -47683,14 +47701,25 @@ License: MIT
         n("browser_close_tab", async (a) => {
           const tabId = a.payload && a.payload.tabId;
           if (!tabId) throw new Error("Missing tabId parameter");
+          const wasActive = (e.tabId === tabId);
           await chrome.tabs.remove(tabId);
-          const currentTabId = await pd.getValue();
-          if (currentTabId === tabId) {
+          if (wasActive) {
+            e.tabId = -1;
             const tabs = await chrome.tabs.query({ active: true, lastFocusedWindow: true });
-            if (tabs.length > 0) pd.setValue(tabs[0].id);
-            else pd.setValue(null);
+            if (tabs.length > 0) {
+              e.tabId = tabs[0].id;
+              await PC(tabs[0].id);
+              pd.setValue(tabs[0].id);
+            } else {
+              pd.setValue(null);
+            }
+          } else {
+            const currentTabId = await pd.getValue();
+            if (currentTabId === tabId) {
+              pd.setValue(e.tabId !== -1 ? e.tabId : null);
+            }
           }
-          return { closed: tabId };
+          return { closed: tabId, switchedTo: e.tabId !== -1 ? e.tabId : null };
         }),
       ),
       r.push(
