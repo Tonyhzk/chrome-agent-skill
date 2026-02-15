@@ -21,7 +21,18 @@ while _p != _p.parent:
     _p = _p.parent
 # === 依赖加载结束 ===
 
+import json as _json
+
 from utils import capture_aria_snapshot
+
+# === 配置加载 ===
+_config_path = Path(__file__).parent.parent / "config.json"
+_config = {}
+if _config_path.exists():
+    try:
+        _config = _json.loads(_config_path.read_text(encoding="utf-8"))
+    except Exception:
+        pass
 
 
 # === 导航类工具 ===
@@ -179,8 +190,20 @@ async def screenshot(context, params: dict) -> dict:
 
 
 async def snapshot(context, params: dict) -> dict:
-    """获取页面 ARIA 快照"""
-    result = await capture_aria_snapshot(context, save_path=params.get("snapshot_file", ""))
+    """获取页面 ARIA 快照
+
+    参数:
+        snapshot_file: 保存快照到文件路径（可选）
+        inline: 为 true 时直接在响应中返回快照内容（可选）
+        max_length: 快照最大字符数，0 不截断（默认从 config.json 读取，兜底 0）
+    """
+    max_length = params.get("max_length", _config.get("snapshot_max_length", 0))
+    result = await capture_aria_snapshot(
+        context,
+        save_path=params.get("snapshot_file", ""),
+        max_length=max_length,
+        inline=params.get("inline", False),
+    )
     return {"success": True, "data": result}
 
 
@@ -491,6 +514,8 @@ async def xpath_query(context, params: dict) -> dict:
             - "attr": 提取属性值（需配合 attr_name）
         attr_name: 当 output="attr" 时，指定要提取的属性名
         max_results: 最大返回数量（默认 20）
+        max_length: 单条结果最大显示字符数（默认从 config.json 读取，兜底 500）
+        save_path: 结果保存到文件的路径（可选，传入则将完整结果写入文件）
 
     示例 XPath:
         //h1                          → 所有 h1 标题
@@ -509,6 +534,8 @@ async def xpath_query(context, params: dict) -> dict:
     output_type = params.get("output", "text")
     attr_name = params.get("attr_name", "")
     max_results = params.get("max_results", 20)
+    max_length = params.get("max_length", _config.get("xpath_max_display_length", 500))
+    save_path = params.get("save_path", "")
 
     if output_type == "attr" and not attr_name:
         return {"success": False, "error": "output='attr' 时需要提供 attr_name 参数"}
@@ -538,13 +565,10 @@ async def xpath_query(context, params: dict) -> dict:
     items = []
     for i, node in enumerate(results[:max_results]):
         if isinstance(node, str):
-            # XPath 返回字符串（如 text() 或 @attr）
             items.append(node.strip())
         elif hasattr(node, 'tag'):
-            # 元素节点
             if output_type == "text":
-                text = node.text_content().strip()
-                items.append(text)
+                items.append(node.text_content().strip())
             elif output_type == "inner_html":
                 inner = (node.text or "") + "".join(
                     etree_tostring(child, encoding="unicode", method="html")
@@ -554,8 +578,7 @@ async def xpath_query(context, params: dict) -> dict:
             elif output_type == "outer_html":
                 items.append(etree_tostring(node, encoding="unicode", method="html").strip())
             elif output_type == "attr":
-                val = node.get(attr_name, "")
-                items.append(val)
+                items.append(node.get(attr_name, ""))
             else:
                 items.append(node.text_content().strip())
         else:
@@ -566,11 +589,25 @@ async def xpath_query(context, params: dict) -> dict:
     total = len(results)
     shown = len(items)
 
+    # 保存到文件（完整内容，不截断）
+    if save_path:
+        try:
+            file_lines = [f"XPath: {xpath_expr}", f"匹配 {total} 个结果（显示 {shown} 个）:", ""]
+            for i, item in enumerate(items):
+                file_lines.append(f"[{i+1}] {item}")
+                file_lines.append("")
+            Path(save_path).write_text("\n".join(file_lines), encoding="utf-8")
+        except Exception as e:
+            return {"success": False, "error": f"保存文件失败: {e}"}
+
+    # 构建显示文本（截断）
     lines = [f"匹配 {total} 个结果（显示 {shown} 个）:"]
     for i, item in enumerate(items):
-        # 截断过长的单条结果
-        display = item if len(item) <= 500 else item[:500] + "..."
+        display = item if len(item) <= max_length else item[:max_length] + "..."
         lines.append(f"  [{i+1}] {display}")
+
+    if save_path:
+        lines.append(f"\n完整结果已保存到: {save_path}")
 
     return {
         "success": True,

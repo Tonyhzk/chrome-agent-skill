@@ -122,9 +122,9 @@ Send JSON commands via stdin (one per line):
 | `get_text` | `{}` or `{"max_length": 5000}` | Get page plain text content |
 | `wait` | `{"time": 2}` | Wait (seconds) |
 | `screenshot` | `{}` or `{"savePath": "path"}` | Capture screenshot |
-| `snapshot` | `{}` or `{"snapshot_file": "path"}` | Get ARIA page snapshot (save to file with snapshot_file) |
+| `snapshot` | `{}` or `{"snapshot_file": "path"}` | Get ARIA page snapshot. Supports `snapshot_file` to save to file, `inline: true` to return content directly, `max_length` to control truncation |
 | `get_html` | `{"savePath": "path"}` | Get full page HTML source and save to file |
-| `xpath_query` | `{"xpath": "//h1"}` | Execute XPath query on page, return matching elements' text or HTML |
+| `xpath_query` | `{"xpath": "//h1"}` | Execute XPath query on page. Supports `save_path` to save full results, `max_length` to control display length |
 | `get_console_logs` | `{}` | Get console logs |
 | `list_tabs` | `{}` | List all tabs |
 | `new_tab` | `{"url": "..."}` | Open new tab (url optional) |

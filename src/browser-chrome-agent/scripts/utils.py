@@ -54,21 +54,28 @@ def kill_process_on_port(port: int):
         print(f"释放端口 {port} 失败: {e}", file=sys.stderr)
 
 
-async def capture_aria_snapshot(context, status: str = "", save_path: str = "") -> dict:
-    """捕获页面信息，可选保存 ARIA 快照到文件
+async def capture_aria_snapshot(context, status: str = "", save_path: str = "", max_length: int = 0, inline: bool = False) -> dict:
+    """捕获页面信息，可选保存 ARIA 快照到文件或直接返回
 
     Args:
         context: 浏览器上下文
         status: 操作状态描述（如 "已点击 ref=s1e5"）
-        save_path: 快照保存路径。不传则不获取快照，只返回 URL+Title；
-                   传入路径则获取快照并写入文件
+        save_path: 快照保存路径。传入路径则获取快照并写入文件
+        max_length: 快照最大字符数。0 表示不截断，>0 则截断快照内容
+        inline: 为 True 时直接在响应中返回快照内容（受 max_length 截断）
     """
     url = await context.send_message("getUrl")
     title = await context.send_message("getTitle")
     status_line = f"{status}\n" if status else ""
 
-    if save_path:
+    need_snapshot = save_path or inline
+    snapshot = ""
+    if need_snapshot:
         snapshot = await context.send_message("browser_snapshot", {})
+        if max_length > 0 and len(snapshot) > max_length:
+            snapshot = snapshot[:max_length] + f"\n... (truncated, total {len(snapshot)} chars)"
+
+    if save_path:
         full_text = (
             f"{status_line}"
             f"- Page URL: {url}\n"
@@ -83,5 +90,8 @@ async def capture_aria_snapshot(context, status: str = "", save_path: str = "") 
             path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text(full_text, encoding="utf-8")
         return {"type": "text", "text": f"{status_line}- Page URL: {url}\n- Page Title: {title}\n- Snapshot saved to: {save_path}"}
+
+    if inline:
+        return {"type": "text", "text": f"{status_line}- Page URL: {url}\n- Page Title: {title}\n- Page Snapshot\n```yaml\n{snapshot}\n```"}
 
     return {"type": "text", "text": f"{status_line}- Page URL: {url}\n- Page Title: {title}"}

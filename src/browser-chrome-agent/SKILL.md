@@ -70,9 +70,9 @@ python3 %当前SKILL文件父目录%/scripts/server.py --port 9009
 | `get_text` | `{}` 或 `{"max_length": 5000}` | 获取页面纯文字内容 |
 | `wait` | `{"time": 2}` | 等待（秒） |
 | `screenshot` | `{}` 或 `{"savePath": "全路径"}` | 截图，传 savePath（必须是全路径）保存到文件，不传返回 base64 |
-| `snapshot` | `{}` | 获取页面 ARIA 快照 |
+| `snapshot` | `{}` | 获取页面 ARIA 快照。默认只返回 URL+Title；传 `snapshot_file` 保存到文件；传 `inline: true` 直接返回快照内容；`max_length` 控制截断长度（默认从 config.json 读取，兜底 0 不截断） |
 | `get_html` | `{"savePath": "全路径"}` | 获取页面完整 HTML 源码并保存到文件（savePath 必须是全路径，仅修改版插件可用） |
-| `xpath_query` | `{"xpath": "//h1"}` | 对页面执行 XPath 查询，返回匹配元素的文本或 HTML |
+| `xpath_query` | `{"xpath": "//h1"}` | 对页面执行 XPath 查询，返回匹配元素的文本或 HTML。可选 `save_path` 保存完整结果到文件，`max_length` 控制单条显示长度（默认从 config.json 读取，兜底 500） |
 | `get_console_logs` | `{}` | 获取控制台日志 |
 | `list_tabs` | `{}` | 列出所有标签页（显示 id、标题、URL，`*` 标记活动页） |
 | `new_tab` | `{"url": "..."}` | 打开新标签页（url 可选，默认 about:blank） |
@@ -169,6 +169,15 @@ python3 %当前SKILL文件父目录%/scripts/server.py --port 9009
 - `type` 操作是**追加输入**，不会清空输入框原有内容
 - 如果输入框已有内容需要替换：先点击输入框聚焦，再输入新内容（从空输入框开始最可靠）
 - 或者导航到目标页面的初始状态（如首页），确保输入框为空再操作
+
+## 网页结构解析
+
+当需要深度解析网页 DOM 结构（如提取特定区域内容、分析页面布局、批量提取数据）时：
+
+1. 使用 `get_html` 将页面源码保存到文件
+2. 使用专门的网页解析技能对 HTML 文件进行结构化解析
+
+本技能负责获取页面源码，解析工作交给专门的网页解析技能处理。`xpath_query` 适合简单的元素提取，复杂场景请使用上述流程。
 
 ## 批量解析跳转链接
 

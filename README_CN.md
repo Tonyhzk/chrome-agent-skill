@@ -122,9 +122,9 @@ python3 src/browser-chrome-agent/scripts/server.py --port 9009
 | `get_text` | `{}` 或 `{"max_length": 5000}` | 获取页面纯文字内容 |
 | `wait` | `{"time": 2}` | 等待（秒） |
 | `screenshot` | `{}` 或 `{"savePath": "路径"}` | 截图 |
-| `snapshot` | `{}` 或 `{"snapshot_file": "路径"}` | 获取页面 ARIA 快照（传 snapshot_file 保存到文件） |
+| `snapshot` | `{}` 或 `{"snapshot_file": "路径"}` | 获取页面 ARIA 快照。支持 `snapshot_file` 保存到文件、`inline: true` 直接返回内容、`max_length` 控制截断 |
 | `get_html` | `{"savePath": "路径"}` | 获取页面完整 HTML 源码并保存到文件 |
-| `xpath_query` | `{"xpath": "//h1"}` | 对页面执行 XPath 查询，返回匹配元素的文本或 HTML |
+| `xpath_query` | `{"xpath": "//h1"}` | 对页面执行 XPath 查询。支持 `save_path` 保存完整结果、`max_length` 控制显示长度 |
 | `get_console_logs` | `{}` | 获取控制台日志 |
 | `list_tabs` | `{}` | 列出所有标签页 |
 | `new_tab` | `{"url": "..."}` | 打开新标签页（url 可选） |
