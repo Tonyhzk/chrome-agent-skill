@@ -1,0 +1,96 @@
+<svg width="1200" height="300" xmlns="http://www.w3.org/2000/svg">
+  <!-- 深蓝紫色渐变背景 -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#16213e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0f3460;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- 发光效果 -->
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- 星光粒子 -->
+    <radialGradient id="starGlow">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#ffffff;stop-opacity:0" />
+    </radialGradient>
+  </defs>
+
+  <!-- 背景 -->
+  <rect width="1200" height="300" fill="url(#bgGradient)"/>
+
+  <!-- 星光粒子效果 -->
+  <circle cx="150" cy="50" r="2" fill="url(#starGlow)" opacity="0.6"/>
+  <circle cx="280" cy="120" r="1.5" fill="url(#starGlow)" opacity="0.5"/>
+  <circle cx="450" cy="80" r="2" fill="url(#starGlow)" opacity="0.7"/>
+  <circle cx="650" cy="180" r="1.5" fill="url(#starGlow)" opacity="0.5"/>
+  <circle cx="850" cy="100" r="2" fill="url(#starGlow)" opacity="0.6"/>
+  <circle cx="1050" cy="220" r="1.5" fill="url(#starGlow)" opacity="0.5"/>
+  <circle cx="200" cy="250" r="1.5" fill="url(#starGlow)" opacity="0.4"/>
+  <circle cx="950" cy="50" r="2" fill="url(#starGlow)" opacity="0.6"/>
+
+  <!-- 浏览器窗口图标 -->
+  <g transform="translate(850, 80)">
+    <!-- 窗口外框 -->
+    <rect x="0" y="0" width="280" height="180" rx="8" fill="none" stroke="#4a9eff" stroke-width="2" opacity="0.6" filter="url(#glow)"/>
+
+    <!-- 窗口标题栏 -->
+    <rect x="0" y="0" width="280" height="35" rx="8" fill="#4a9eff" opacity="0.2"/>
+    <circle cx="15" cy="17.5" r="5" fill="#ff5f56" opacity="0.8"/>
+    <circle cx="35" cy="17.5" r="5" fill="#ffbd2e" opacity="0.8"/>
+    <circle cx="55" cy="17.5" r="5" fill="#27c93f" opacity="0.8"/>
+
+    <!-- 代码符号 -->
+    <text x="40" y="100" font-family="'Courier New', monospace" font-size="48" fill="#4a9eff" opacity="0.7" filter="url(#glow)">&lt;/&gt;</text>
+
+    <!-- WebSocket 连接线 -->
+    <path d="M 140 120 Q 140 140, 160 140 L 200 140" stroke="#00d9ff" stroke-width="2" fill="none" opacity="0.6" stroke-dasharray="5,5">
+      <animate attributeName="stroke-dashoffset" from="0" to="10" dur="1s" repeatCount="indefinite"/>
+    </path>
+
+    <!-- Chrome 图标简化版 -->
+    <circle cx="220" cy="140" r="25" fill="none" stroke="#4a9eff" stroke-width="3" opacity="0.7" filter="url(#glow)"/>
+    <circle cx="220" cy="140" r="12" fill="#4a9eff" opacity="0.5"/>
+  </g>
+
+  <!-- 主标题 -->
+  <text x="80" y="120" font-family="Arial, sans-serif" font-size="56" font-weight="bold" fill="#ffffff" filter="url(#glow)">
+    Browser Chrome Agent
+  </text>
+
+  <!-- 副标题（英文） -->
+  <text x="80" y="165" font-family="Arial, sans-serif" font-size="22" fill="#b0c4de" opacity="0.9">
+    WebSocket-based Chrome automation for Claude Code
+  </text>
+
+  <!-- 副标题（中文） -->
+  <text x="80" y="200" font-family="Arial, sans-serif" font-size="20" fill="#87ceeb" opacity="0.8">
+    通过 WebSocket 与 Chrome 扩展通信，实现浏览器自动化操作
+  </text>
+
+  <!-- 装饰线条 -->
+  <line x1="80" y1="220" x2="400" y2="220" stroke="#4a9eff" stroke-width="2" opacity="0.4"/>
+
+  <!-- Python + WebSocket 标签 -->
+  <g transform="translate(80, 240)">
+    <rect x="0" y="0" width="90" height="28" rx="14" fill="#4a9eff" opacity="0.2" stroke="#4a9eff" stroke-width="1"/>
+    <text x="45" y="19" font-family="Arial, sans-serif" font-size="14" fill="#4a9eff" text-anchor="middle">Python</text>
+  </g>
+
+  <g transform="translate(185, 240)">
+    <rect x="0" y="0" width="110" height="28" rx="14" fill="#00d9ff" opacity="0.2" stroke="#00d9ff" stroke-width="1"/>
+    <text x="55" y="19" font-family="Arial, sans-serif" font-size="14" fill="#00d9ff" text-anchor="middle">WebSocket</text>
+  </g>
+
+  <g transform="translate(310, 240)">
+    <rect x="0" y="0" width="90" height="28" rx="14" fill="#27c93f" opacity="0.2" stroke="#27c93f" stroke-width="1"/>
+    <text x="45" y="19" font-family="Arial, sans-serif" font-size="14" fill="#27c93f" text-anchor="middle">Chrome</text>
+  </g>
+</svg>
