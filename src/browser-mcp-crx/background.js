@@ -47897,6 +47897,13 @@ License: MIT
         (p && ((d.tabId = -1), (await xC(p)) && (await AH(p))),
           f && ((d.tabId = f), await PC(f)));
       });
+    const g = (activeInfo) => {
+      const newTabId = activeInfo.tabId;
+      if (newTabId && d.tabId !== -1 && newTabId !== d.tabId) {
+        pd.setValue(newTabId);
+      }
+    };
+    chrome.tabs.onActivated.addListener(g);
     return () => {
       (t.removeEventListener("open", r),
         t.removeEventListener("error", i),
@@ -47905,7 +47912,8 @@ License: MIT
         c(),
         u(),
         l(),
-        h());
+        h(),
+        chrome.tabs.onActivated.removeListener(g));
     };
   }
   const Fq = Ke(() => {

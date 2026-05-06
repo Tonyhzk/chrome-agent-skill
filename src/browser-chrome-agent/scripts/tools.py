@@ -64,11 +64,21 @@ async def go_forward(context, params: dict) -> dict:
 # === 页面交互工具 ===
 
 async def click(context, params: dict) -> dict:
-    """点击页面元素，支持 ref 或坐标"""
+    """点击页面元素，支持 ref 或坐标，自动检测并切换到新打开的标签页"""
     import asyncio
     ref = params.get("ref", "")
     x = params.get("x")
     y = params.get("y")
+
+    # 点击前记录当前标签页列表
+    try:
+        tabs_before = await context.send_message("browser_list_tabs", {})
+        active_before = next((t["id"] for t in tabs_before if t.get("active")), None)
+        ids_before = {t["id"] for t in tabs_before}
+    except Exception:
+        tabs_before = None
+        active_before = None
+        ids_before = None
 
     if x is not None and y is not None:
         # 坐标点击
@@ -76,16 +86,39 @@ async def click(context, params: dict) -> dict:
             await context.send_message("browser_click_at", {"x": x, "y": y}, timeout_ms=5000)
         except TimeoutError:
             await asyncio.sleep(1)
-        snapshot = await capture_aria_snapshot(context, f'已点击坐标 ({x}, {y})', save_path=params.get("snapshot_file", ""))
-        return {"success": True, "data": snapshot}
-
-    if not ref:
+    elif not ref:
         return {"success": False, "error": "缺少 ref 参数或坐标参数 (x, y)"}
-    try:
-        await context.send_message("browser_click", {"ref": ref}, timeout_ms=5000)
-    except TimeoutError:
-        await asyncio.sleep(1)
-    snapshot = await capture_aria_snapshot(context, f'已点击 ref={ref}', save_path=params.get("snapshot_file", ""))
+    else:
+        try:
+            await context.send_message("browser_click", {"ref": ref}, timeout_ms=5000)
+        except TimeoutError:
+            await asyncio.sleep(1)
+
+    # 点击后检测是否打开了新标签页，自动切换
+    switched = False
+    if ids_before is not None:
+        await asyncio.sleep(0.5)  # 等待新标签页创建
+        try:
+            tabs_after = await context.send_message("browser_list_tabs", {})
+            ids_after = {t["id"] for t in tabs_after}
+            new_tab_ids = ids_after - ids_before
+            if new_tab_ids:
+                # 有新标签页，切换到新标签页
+                # 优先选择新标签页中 active 的，否则取第一个新标签页
+                active_after = next((t for t in tabs_after if t.get("active")), None)
+                if active_after and active_after["id"] in new_tab_ids:
+                    target_id = active_after["id"]
+                else:
+                    target_id = next(iter(new_tab_ids))
+                await context.send_message("browser_switch_tab", {"tabId": target_id})
+                switched = True
+        except Exception:
+            pass
+
+    status = f'已点击坐标 ({x}, {y})' if (x is not None and y is not None) else f'已点击 ref={ref}'
+    if switched:
+        status += '（已自动切换到新标签页）'
+    snapshot = await capture_aria_snapshot(context, status, save_path=params.get("snapshot_file", ""))
     return {"success": True, "data": snapshot}
 
 

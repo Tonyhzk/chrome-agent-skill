@@ -14,6 +14,8 @@
 - `snapshot` / `xpath_query` 新增 `max_length` 参数：控制返回内容截断长度，默认从 config.json 读取
 - `xpath_query` 新增 `save_path` 参数：将完整查询结果保存到文件（输出到文件时不再返回内容）
 - 支持通过 `config.json` 配置 `snapshot_max_length` 和 `xpath_max_display_length` 默认值
+- Chrome 扩展：添加 `chrome.tabs.onActivated` 监听器，自动检测标签页切换并同步调试器附加状态
+- `click` 操作：自动检测点击后打开的新标签页并切换到新标签页
 
 ### 变更
 - SKILL.md 新增"网页结构解析"工作流章节

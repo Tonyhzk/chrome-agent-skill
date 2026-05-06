@@ -14,6 +14,8 @@ All notable changes to this project will be documented in this file.
 - `snapshot` / `xpath_query`: new `max_length` parameter to control content truncation, defaults read from config.json
 - `xpath_query`: new `save_path` parameter to save full query results to file (suppresses content output when saving)
 - Support `snapshot_max_length` and `xpath_max_display_length` defaults via `config.json`
+- Chrome extension: `chrome.tabs.onActivated` listener to auto-detect tab switches and sync debugger attachment
+- `click` action: auto-detect new tabs opened by clicks and switch to them automatically
 
 ### Changed
 - SKILL.md: added "Web Structure Parsing" workflow section
